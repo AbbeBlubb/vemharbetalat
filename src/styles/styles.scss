@@ -1,0 +1,8 @@
+/* Url till bilder i CSS:en ska göras relativt till styles.scss, inte till det enskilda CSS-bladet */
+
+@import 'settings';
+
+@import 'components/page-start';
+@import 'components/main-frame';
+@import 'components/instructions';
+@import 'components/header';
