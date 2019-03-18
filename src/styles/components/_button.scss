@@ -1,0 +1,31 @@
+.button {
+  margin: 5px 10px;
+  padding: 5px 10px;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+
+  &__transparent {
+    background-color: transparent;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+  }
+
+  &__transparent:hover {
+    border-top: 4px solid gray;
+    border-bottom: 4px solid gray;
+  }
+
+  &__buy {
+    padding: 10px 20px;
+    background-color: aqua;
+    border-radius: 10px;
+  }
+
+}
