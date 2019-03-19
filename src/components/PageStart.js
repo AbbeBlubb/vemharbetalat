@@ -9,15 +9,15 @@ export function PageStart() {
   return (
       <div className='page-start'>
         
-        <Button style={'transparent'}>
+        <Button styleType={'transparent'}>
           Förslag
         </Button>
         
-        <Button style={'transparent'}>
+        <Button styleType={'transparent'}>
           Om VemHarBetalat
         </Button>
         
-        <Button style={'transparent'}>
+        <Button styleType={'transparent'}>
           Logga in
         </Button>
         
@@ -33,7 +33,7 @@ export function PageStart() {
         Ta reda på det nu!
         </Paragraph>
         
-        <Button style={'buy'}>
+        <Button styleType={'buy'}>
           Betala 10 kr
         </Button>
         
