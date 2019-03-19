@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import {MainFrame} from "./MainFrame";
+import React from 'react';
+import MainFrame from "./MainFrame";
 import {PageStart} from "./PageStart";
 
-class App extends Component {
+export default class App extends React.Component {
+  
   render() {
     return (
       <MainFrame>
@@ -11,5 +12,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
