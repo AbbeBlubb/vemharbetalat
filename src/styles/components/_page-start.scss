@@ -8,6 +8,7 @@
     justify-content: space-around;
 
     @media(min-height: 900px) {
+      margin-top: calc((100vh - 100px - 800px) * 0.3); // If VH 901, then margin-top = 1px * 0.3
       min-height: auto;
       height: 800px;
       // Smooth responsivity on height because of the min-height: calc(100vh - 100px) of the parent, whereas here on child, height 900 and height 800
