@@ -1,3 +1,16 @@
 .page-start {
-  ;
+
+  &__content {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    @media(min-height: 900px) {
+      min-height: auto;
+      height: 800px;
+      // Smooth responsivity on height because of the min-height: calc(100vh - 100px) of the parent, whereas here on child, height 900 and height 800
+    }
+  }
 }

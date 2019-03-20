@@ -8,10 +8,20 @@ html {
 
 body {
   font-family: Consolas, monospace;
-  font-size: 24px;
+  font-size: 18px;
   color: red;
 
   margin: 0;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+
+  @media (min-width: 900px) {
+    font-size: 24px;
+  }
 }
 
 body:not(.user-is-tabbing) button:focus,
@@ -19,4 +29,13 @@ body:not(.user-is-tabbing) input:focus,
 body:not(.user-is-tabbing) select:focus,
 body:not(.user-is-tabbing) textarea:focus {
   outline: none;
+}
+
+.paragraph,
+.instructions {
+  max-width: 350px;
+
+  @media(min-width: 900px) {
+    max-width: 450px;
+  }
 }

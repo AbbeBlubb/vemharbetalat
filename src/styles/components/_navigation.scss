@@ -1,0 +1,23 @@
+.navigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width: 420px) {
+    display: block;
+    text-align: right;
+  }
+
+  & > button > span::after {
+    content: 'VHB';
+
+    @media (min-width: 420px) {
+      content: 'VemHarBetalat';
+    }
+  }
+
+
+
+
+
+}

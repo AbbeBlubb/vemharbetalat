@@ -1,15 +1,19 @@
 .button {
-  margin: 5px 10px;
+  margin: 2px 2px;
   padding: 5px 10px;
   font-family: inherit;
   font-size: inherit;
   border: none;
 
-  -webkit-transition: all 0.3s ease;
+/*  -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; */
+
+  @media (min-width: 900px) {
+    margin: 5px 10px;
+  }
 
   &__transparent {
     background-color: transparent;
