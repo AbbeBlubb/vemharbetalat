@@ -4,6 +4,11 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; // Controls whether the user can select text
+  -webkit-tap-highlight-color: transparent; // Sets the color of the highlight that appears over a link while it's being tapped. Transparent if to remove the highlight
 }
 
 body {
@@ -13,23 +18,12 @@ body {
 
   margin: 0;
 
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-
   @media (min-width: 900px) {
     font-size: 24px;
   }
 }
 
-body:not(.user-is-tabbing) button:focus,
-body:not(.user-is-tabbing) input:focus,
-body:not(.user-is-tabbing) select:focus,
-body:not(.user-is-tabbing) textarea:focus {
-  outline: none;
-}
+/* Width for repeated text-boxes */
 
 .paragraph,
 .instructions {

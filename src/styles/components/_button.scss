@@ -4,12 +4,14 @@
   font-family: inherit;
   font-size: inherit;
   border: none;
+  cursor: pointer;
 
-/*  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease; */
+
+  -webkit-transition: border 0.3s ease;
+  -moz-transition: border 0.3s ease;
+  -ms-transition: border 0.3s ease;
+  -o-transition: border 0.3s ease;
+  transition: border 0.3s ease;
 
   @media (min-width: 900px) {
     margin: 5px 10px;
@@ -17,13 +19,14 @@
 
   &__transparent {
     background-color: transparent;
-    border-top: 4px solid transparent;
+    border-top: 4px solid transparent; // Border exists here, but transparent, in order to take the space of the border
     border-bottom: 4px solid transparent;
   }
 
+  /* Hover active only on desktop, to avoid the hover state get stuck on cellphone touch-and-move. Effect on cellphone is that the styling disappears when ending the touch */
   &__transparent:hover {
-    border-top: none;
-    border-bottom: none;
+    border-top: transparent; // Needs to be transparent. If "none", the button border will "flash" when pressing a new button because of on press --> active with border, then when stop press --> not active with none border, and then when press another button the old button border will continue the transition
+    border-bottom: transparent;
 
     @media (min-width: 1100px) {
       border-top: 4px solid gray;
@@ -31,20 +34,24 @@
     }
   }
 
+  /* When active (clicked) */
   &__transparent:active {
     border-top: 4px solid gray;
     border-bottom: 4px solid gray;
-
-    @media (min-width: 1100px) {
-      border-top: none;
-      border-bottom: none;
-    }
   }
 
   &__buy {
     padding: 10px 20px;
     background-color: aqua;
     border-radius: 10px;
+
+    &:hover {
+      background-color: aquamarine;
+    }
+
+    &:active {
+      background-color: aqua;
+    }
   }
 
 }
