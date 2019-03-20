@@ -46,11 +46,13 @@
     border-radius: 10px;
 
     &:hover {
-      background-color: aquamarine;
+      @media (min-width: 1100px) {
+        background-color: aquamarine;
+      }
     }
 
     &:active {
-      background-color: aqua;
+      background-color: aquamarine;
     }
   }
 
