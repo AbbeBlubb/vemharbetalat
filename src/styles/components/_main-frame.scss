@@ -1,4 +1,8 @@
 .main-frame {
-  padding: 20px;
+  padding: 0 20px;
   position: relative;
+
+  @media (min-height: 650px) {
+    padding: 20px;
+  }
 }
