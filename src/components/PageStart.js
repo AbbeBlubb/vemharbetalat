@@ -5,47 +5,53 @@ import {Button} from "./Button";
 import {Paragraph} from "./Paragraph";
 import Modal from "./Modal";
 import {Navigation} from "./Navigation";
+import {Suggestions} from "../modals/Suggestions";
+import {About} from "../modals/About";
+import {Login} from "../modals/Login";
 
 export function PageStart() {
   return (
       <div className='page-start'>
-        
+
         <Navigation>
-          <Button styleType={'transparent'}>
-            Förslag
-          </Button>
-          
-          <Button styleType={'transparent'}>
-            Om <span />
-          </Button>
-          
-          <Button styleType={'transparent'}>
-            Logga in
-          </Button>
+
+          <Modal render={() => <Suggestions />}>
+            <Button styleType={'transparent'}>
+              Förslag
+            </Button>
+          </Modal>
+
+          <Modal render={() => <About />}>
+            <Button styleType={'transparent'}>
+              Om <span />
+            </Button>
+          </Modal>
+
+          <Modal render={() => <Login />}>
+            <Button styleType={'transparent'}>
+              Logga in
+            </Button>
+          </Modal>
+
         </Navigation>
-        
-        {/*
-        <Modal>
-          Modal-test
-        </Modal>
-        */}
-        
+
+
         <div className='page-start__content'>
           <Header level={'h1'} textAlign={'center'}>
             Vem har betalat för att se vem som har betalat?
           </Header>
-          
+
           <Paragraph textAlign={'left'}>
             Ta reda på det nu!
           </Paragraph>
-          
+
           <Button styleType={'buy'}>
             Betala 10 kr
           </Button>
-          
+
           <Instructions />
         </div>
-        
+
       </div>
   )
 }

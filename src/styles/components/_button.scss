@@ -25,8 +25,8 @@
 
   /* Hover active only on desktop, to avoid the hover state get stuck on cellphone touch-and-move. Effect on cellphone is that the styling disappears when ending the touch */
   &__transparent:hover {
-    border-top: transparent; // Needs to be transparent. If "none", the button border will "flash" when pressing a new button because of on press --> active with border, then when stop press --> not active with none border, and then when press another button the old button border will continue the transition
-    border-bottom: transparent;
+    border-top: 4px solid transparent; // Needs to be transparent. If "none", the button border will "flash" when pressing a new button because of on press --> active with border, then when stop press --> not active with none border, and then when press another button the old button border will continue the transition
+    border-bottom: 4px solid transparent;
 
     @media (min-width: 1100px) {
       border-top: 4px solid gray;
