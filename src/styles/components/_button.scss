@@ -6,18 +6,19 @@
   border: none;
   cursor: pointer;
 
-
-  -webkit-transition: border 0.3s ease;
-  -moz-transition: border 0.3s ease;
-  -ms-transition: border 0.3s ease;
-  -o-transition: border 0.3s ease;
-  transition: border 0.3s ease;
-
   @media (min-width: 900px) {
     margin: 5px 10px;
   }
 
+  /* Transparent */
+
   &__transparent {
+    -webkit-transition: border 0.3s ease;
+    -moz-transition: border 0.3s ease;
+    -ms-transition: border 0.3s ease;
+    -o-transition: border 0.3s ease;
+    transition: border 0.3s ease;
+
     background-color: transparent;
     border-top: 4px solid transparent; // Border exists here, but transparent, in order to take the space of the border
     border-bottom: 4px solid transparent;
@@ -40,6 +41,8 @@
     border-bottom: 4px solid gray;
   }
 
+  /* Buy */
+
   &__buy {
     padding: 10px 20px;
     background-color: aqua;
@@ -53,6 +56,25 @@
 
     &:active {
       background-color: aquamarine;
+    }
+  }
+
+  /* Retro */
+
+  &__retro {
+    padding: 5px 10px;
+    background-color: lightgray;
+    border-left: 3px solid lightgray;
+    border-top: 3px solid lightgray;
+    border-right: 3px solid slategray;
+    border-bottom: 3px solid slategray;
+
+    &:active {
+      background-color: darkgray;
+      border-left: 3px solid slategray;
+      border-top: 3px solid slategray;
+      border-right: 3px solid darkgray;
+      border-bottom: 3px solid darkgray;
     }
   }
 

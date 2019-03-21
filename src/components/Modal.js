@@ -1,4 +1,5 @@
 import React from "react";
+import {Button} from "./Button";
 
 export default class Modal extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ export default class Modal extends React.Component {
 
   render() {
 
-    const varWithClasses = this.state.show ? 'modal__background display-block' : 'modal__background display-none';
+    const varWithClasses = this.state.show ? 'modal__background modal--display-block' : 'modal__background modal--display-none';
 
     return (
         <>
@@ -28,12 +29,17 @@ export default class Modal extends React.Component {
             {this.props.children}
           </section>
 
-          <div className={varWithClasses}>
+          <div className={varWithClasses} onClick={this.hideModal}>
             <div className='modal__card'>
-              <div >
-                {this.props.render()}
-                <div><button onClick={this.hideModal}>Stäng</button></div>
+
+              {this.props.render()}
+
+              <div className='align-center'>
+                <Button styleType={'retro'} onClick={this.hideModal}>
+                  Stäng
+                </Button>
               </div>
+
             </div>
           </div>
         </>
