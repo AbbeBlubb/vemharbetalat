@@ -10,19 +10,27 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
+    
+    -webkit-animation: darken 0.2s;
+    -o-animation: darken 0.2s;
+    animation: darken 0.1s;
   }
 
   &__card {
     position: absolute;
     min-width: 300px; // Fits iPhone 5 standing
-    min-height: 300px; // Fits iPhone 5 laying
+    min-height: 200px; // Fits iPhone 5 laying
     max-width: 80%; // Will still be limited by the content inside __card - if <Paragraph>, then max-width is 350px / 450px
     max-height: 80%;
     overflow: auto;
     top:50%;
     left:50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+
+    -webkit-animation: slide-up 0.2s;
+    -o-animation: slide-up 0.2s;
+    animation: slide-up 0.1s;
 
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -47,5 +55,14 @@
     display: none;
   }
 
-}
+  @keyframes slide-up {
+    from {transform: translate(-50%, -30%);}
+    to {transform: translate(-50%, -50%);}
+  }
 
+  @keyframes darken {
+    from {background: rgba(0, 0, 0, 0.0);}
+    to {background: rgba(0, 0, 0, 0.7);}
+  }
+
+}

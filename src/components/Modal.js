@@ -40,9 +40,9 @@ export class Modal extends React.Component {
           <section className='modal__container-for-trigger' onClick={() => this.showModal()}>
             {this.props.children}
           </section>
-
-          <div className={varWithClasses} ref={modalBackground => this.modalBackground = modalBackground}>
-            <div className='modal__card' ref={modalCard => this.modalCard = modalCard}>
+  
+          <div className={varWithClasses} ref={element => this.modalBackground = element}>
+            <div className='modal__card' ref={element => this.modalCard = element}>
 
               {this.props.render()}
 
