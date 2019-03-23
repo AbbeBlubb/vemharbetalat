@@ -1,6 +1,6 @@
 import React from "react"
-import {Paragraph} from "../components/Paragraph";
-import {Header} from "../components/Header";
+import {Paragraph} from "../Paragraph";
+import {Header} from "../Header";
 
 export function Login() {
   return (
@@ -12,6 +12,9 @@ export function Login() {
 
         <Paragraph textAlign={'left'}>
           Fält för att logga in!
+          Användarnamn:
+          Lösenord:
+          Knapp för "logga in". Eller: stäng-knapp.
         </Paragraph>
       </section>
   )

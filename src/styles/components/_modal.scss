@@ -15,17 +15,20 @@
 
   &__card {
     position: absolute;
-    min-width: 300px;
-    min-height: 500px;
-    max-width: 80%;
+    min-width: 300px; // Fits iPhone 5 standing
+    min-height: 300px; // Fits iPhone 5 laying
+    max-width: 80%; // Will still be limited by the content inside __card - if <Paragraph>, then max-width is 350px / 450px
     max-height: 80%;
     overflow: auto;
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
 
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 2px;
     background: white;
-    padding: 0 20px 10px;
+    padding: 10px 20px;
 
     text-align: left;
 
