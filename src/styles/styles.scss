@@ -1,18 +1,16 @@
 /* Url till bilder i CSS:en ska göras relativt till styles.scss, inte till det enskilda CSS-bladet */
 
-@import 'settings';
-@import 'settings-outline';
-
-@import 'helpers';
-@import 'waves';
-@import '_z-indexes';
+@import 'general/settings';
+@import 'general/settings-outline';
+@import 'general/helpers';
+@import 'general/waves';
+@import 'general/z-indexes';
 
 @import 'components/page-start';
 @import 'components/main-frame';
-@import 'components/instructions';
-@import 'components/header';
 @import 'components/navigation';
-
-@import 'components/button';
+@import 'components/header';
 @import 'components/paragraph';
+@import 'components/instructions';
+@import 'components/button';
 @import 'components/modal';

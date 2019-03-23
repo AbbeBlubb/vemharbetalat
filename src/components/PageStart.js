@@ -1,18 +1,20 @@
-import React from "react"
-import {Header} from "./Header";
+import React          from "react"
+import {Header}       from "./Header";
 import {Instructions} from "./Instructions";
-import {Button} from "./Button";
-import {Paragraph} from "./Paragraph";
-import {Modal} from "./Modal";
-import {Navigation} from "./Navigation";
-import {Suggestions} from "./modals/Suggestions";
-import {About} from "./modals/About";
-import {Login} from "./modals/Login";
+import {Button}       from "./Button";
+import {Paragraph}    from "./Paragraph";
+import {Modal}        from "./Modal";
+import {Navigation}   from "./Navigation";
+import {Suggestions}  from "./modals/Suggestions";
+import {About}        from "./modals/About";
+import {Login}        from "./modals/Login";
 
 export function PageStart() {
   return (
       <div className='page-start'>
 
+        {/* Menu */}
+        
         <Navigation>
 
           <Modal render={() => <Suggestions />}>
@@ -35,8 +37,10 @@ export function PageStart() {
 
         </Navigation>
 
-
+        {/* Content */}
+        
         <div className='page-start__content'>
+          
           <Header level={'h1'} textAlign={'center'}>
             Vem har betalat för att se vem som har betalat?
           </Header>
@@ -50,6 +54,7 @@ export function PageStart() {
           </Button>
           
           <Instructions />
+          
         </div>
 
       </div>

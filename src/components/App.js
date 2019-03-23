@@ -1,6 +1,6 @@
-import React from 'react';
-import MainFrame from './MainFrame';
-import {PageStart} from './PageStart';
+import React        from 'react';
+import {MainFrame}  from './MainFrame';
+import {PageStart}  from './PageStart';
 import './helpers/InteractionHelper';
 import './helpers/waves'
 

@@ -1,6 +1,6 @@
 import React from "react"
 
-export default class MainFrame extends React.Component {
+export class MainFrame extends React.Component {
 
 
 
