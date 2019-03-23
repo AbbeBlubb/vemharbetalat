@@ -2,7 +2,7 @@ import React from "react"
 
 export function Button(props) {
   return (
-      <button className={`button button__${props.styleType}`}>
+      <button className={`button button__${props.styleType} ${props.rippleEffect ? 'waves-effect waves-light-gray' : ''}`}>
         {props.children}
       </button>
   )

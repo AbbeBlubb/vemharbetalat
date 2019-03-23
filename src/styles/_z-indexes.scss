@@ -1,0 +1,12 @@
+
+
+/* About the waves-effect
+   in _waves.scss, the .waves-effect has a z-index of 1.
+   Only way to not let the buy-button to be on top of everything, is to set the z-index on .navigation.
+   What ever I did, z-index didn't have effect on elements; still the buy-button was higher on stack.
+   This is because .navigation and .content are siblings, and it seems like .navigation needs to have higher z-index than .content (that has a child with z-index).
+   */
+
+.navigation {
+  z-index: 10;
+}

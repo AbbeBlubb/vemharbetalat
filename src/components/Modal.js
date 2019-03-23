@@ -12,7 +12,9 @@ export class Modal extends React.Component {
   };
 
   hideModal = () => {
-    this.setState({ show: false });
+    setTimeout(() => {
+      this.setState({ show: false });
+    }, 200)
   };
   
   handleClickOutsideModalCard = (e) => {
@@ -23,12 +25,20 @@ export class Modal extends React.Component {
     }
   };
   
+  escapeKeyIsPressed = (e) => {
+    if (e.keyCode === 27) {
+      this.hideModal()
+    }
+  }
+  
   componentDidMount() {
-    this.modalBackground.addEventListener('mousedown', this.handleClickOutsideModalCard, false)
+    this.modalBackground.addEventListener('mousedown', this.handleClickOutsideModalCard, false);
+    window.addEventListener('keydown', this.escapeKeyIsPressed, false);
   }
   
   componentWillUnmount() {
-    this.modalBackground.removeEventListener('mousedown', this.handleClickOutsideModalCard, false)
+    this.modalBackground.removeEventListener('mousedown', this.handleClickOutsideModalCard, false);
+    window.removeEventListener('keydown', this.escapeKeyIsPressed, false);
   }
   
   render() {
@@ -48,7 +58,7 @@ export class Modal extends React.Component {
 
               <div className='align-center'>
                 <span onClick={() => this.hideModal()}>
-                  <Button styleType={'retro'}>
+                  <Button styleType={'retro'} rippleEffect={false}>
                     Stäng
                   </Button>
                 </span>

@@ -16,19 +16,19 @@ export function PageStart() {
         <Navigation>
 
           <Modal render={() => <Suggestions />}>
-            <Button styleType={'transparent'}>
+            <Button styleType={'transparent'} rippleEffect={false}>
               Förslag
             </Button>
           </Modal>
 
           <Modal render={() => <About />}>
-            <Button styleType={'transparent'}>
+            <Button styleType={'transparent'} rippleEffect={false}>
               Om <span />
             </Button>
           </Modal>
 
           <Modal render={() => <Login />}>
-            <Button styleType={'transparent'}>
+            <Button styleType={'transparent'} rippleEffect={false}>
               Logga in
             </Button>
           </Modal>
@@ -45,10 +45,10 @@ export function PageStart() {
             Ta reda på det nu!
           </Paragraph>
 
-          <Button styleType={'buy'}>
+          <Button styleType={'buy'} rippleEffect={true}>
             Betala 10 kr
           </Button>
-
+          
           <Instructions />
         </div>
 
