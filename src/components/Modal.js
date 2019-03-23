@@ -16,8 +16,8 @@ export class Modal extends React.Component {
   };
   
   handleClickOutsideModalCard = (e) => {
-    console.log('Clicked outside modal card');
-    console.log(e.target);
+    //console.log('Clicked outside modal card - that is, on modal background?');
+    //console.log(e.target);
     if(!this.modalCard.contains(e.target)) {
       this.hideModal()
     }
@@ -25,10 +25,6 @@ export class Modal extends React.Component {
   
   componentDidMount() {
     this.modalBackground.addEventListener('mousedown', this.handleClickOutsideModalCard, false)
-  }
-  
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    console.log('Clicked on Modal -> children');
   }
   
   componentWillUnmount() {
