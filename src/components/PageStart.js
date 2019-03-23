@@ -16,6 +16,8 @@ export function PageStart() {
         {/* Menu */}
         
         <Navigation>
+          
+          {/* Re-arranging the elements in .navigation will break the ::after for the <About> component */}
 
           <Modal render={() => <Suggestions />}>
             <Button styleType={'transparent'} rippleEffect={false}>

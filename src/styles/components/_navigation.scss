@@ -10,7 +10,8 @@
     text-align: right;
   }
 
-  & > button > span::after {
+  /* If re-arranging the elements, the ::after will have no effect */
+  & section > button > span::after {
     content: 'VHB';
 
     @media (min-width: 420px) {

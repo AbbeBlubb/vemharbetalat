@@ -1,5 +1,6 @@
 import React from "react";
 import {Button} from "./Button";
+import closeIcon from "../assets/baseline_highlight_off_white_48dp.png"
 
 export class Modal extends React.Component {
   constructor(props) {
@@ -52,6 +53,7 @@ export class Modal extends React.Component {
           </section>
   
           <div className={varWithClasses} ref={element => this.modalBackground = element}>
+            <img className='modal__close-icon' src={closeIcon} alt='Close icon'/> {/* The close icon doesn't need to fire the hideModal because of the handleClickOutsideModalCard */}
             <div className='modal__card' ref={element => this.modalCard = element}>
 
               {this.props.render()}
