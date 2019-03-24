@@ -1,13 +1,14 @@
 import React          from "react"
-import {Header}       from "./Header";
-import {Instructions} from "./Instructions";
-import {Button}       from "./Button";
-import {Paragraph}    from "./Paragraph";
-import {Modal}        from "./Modal";
-import {Navigation}   from "./Navigation";
-import {Suggestions}  from "./modals/Suggestions";
-import {About}        from "./modals/About";
-import {Login}        from "./modals/Login";
+import {Header}       from "../Header";
+import {Instructions} from "../Instructions";
+import {Button}       from "../Button";
+import {Paragraph}    from "../Paragraph";
+import {Modal}        from "../modals/Modal";
+import {Navigation}   from "../Navigation";
+import {Suggestions}  from "../modals/Suggestions";
+import {About}        from "../modals/About";
+import {Login}        from "../modals/Login";
+import LoginFirstDraft from "../LoginFirstDraft";
 
 export function PageStart() {
   return (
@@ -56,6 +57,8 @@ export function PageStart() {
           </Button>
           
           <Instructions />
+          
+          <LoginFirstDraft />
           
         </div>
 

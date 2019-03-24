@@ -1,6 +1,6 @@
 import React from "react";
-import {Button} from "./Button";
-import closeIcon from "../assets/baseline_highlight_off_white_48dp.png"
+import {Button} from "../Button";
+import closeIcon from "../../assets/baseline_highlight_off_white_48dp.png"
 
 export class Modal extends React.Component {
   constructor(props) {
