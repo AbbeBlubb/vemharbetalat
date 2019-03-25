@@ -1,8 +1,10 @@
 import React          from 'react';
-import fire           from '../config/fire'
+import {BrowserRouter, Route, Link, Redirect, withRouter} from "react-router-dom";
+import firebase           from '../config/firebase'
 import {MainFrame}    from './MainFrame';
 import {PageStart}    from './views/PageStart';
-import {PageLoggedIn} from "./views/PageLoggedIn";
+import {PageNewUser} from "./views/PageNewUser";
+import {PageAuthenticated} from "./views/PageAuthenticated";
 import './helpers/InteractionHelper';
 import './helpers/waves'
 
@@ -21,7 +23,7 @@ export default class App extends React.Component {
   }
   
   authListener() {
-    fire.auth().onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged((user) => {
       console.log(user);
       if (user) {
         this.setState({ user });
@@ -36,7 +38,11 @@ export default class App extends React.Component {
   render() {
     return (
       <MainFrame>
-        { this.state.user ? <PageLoggedIn /> : <PageStart /> }
+        <BrowserRouter>
+          <Route path='/'         component={PageStart}         exact />
+          <Route path='/new'      component={PageNewUser}             />
+          <Route path='/account'  component={PageAuthenticated}       />
+        </BrowserRouter>
       </MainFrame>
     );
   }

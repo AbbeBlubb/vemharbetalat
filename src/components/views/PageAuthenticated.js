@@ -1,7 +1,7 @@
 import React from "react"
-import fire from '../../config/fire';
+import fire from '../../config/firebase';
 
-export class PageLoggedIn extends React.Component {
+export class PageAuthenticated extends React.Component {
   constructor(props) {
     super(props);
     this.logout = this.logout.bind(this);

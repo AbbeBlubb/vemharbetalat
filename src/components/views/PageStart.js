@@ -8,7 +8,7 @@ import {Navigation}   from "../Navigation";
 import {Suggestions}  from "../modals/Suggestions";
 import {About}        from "../modals/About";
 import {Login}        from "../modals/Login";
-import LoginFirstDraft from "../LoginFirstDraft";
+import Register from "../modals/Register";
 
 export function PageStart() {
   return (
@@ -57,8 +57,6 @@ export function PageStart() {
           </Button>
           
           <Instructions />
-          
-          <LoginFirstDraft />
           
         </div>
 
