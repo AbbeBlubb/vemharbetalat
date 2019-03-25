@@ -1,4 +1,6 @@
 .main-frame {
+  width: 100%;
+  height: 100%; /* To avoid the "scrolling" because of the browser's URL bar */
   padding: 0 20px;
   position: relative;
 

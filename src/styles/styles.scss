@@ -6,11 +6,12 @@
 @import 'general/waves';
 @import 'general/z-indexes';
 
-@import 'components/page-start';
 @import 'components/main-frame';
+@import 'components/views/page-start';
+@import 'components/views/page-no-match';
 @import 'components/navigation';
 @import 'components/header';
 @import 'components/paragraph';
 @import 'components/instructions';
 @import 'components/button';
-@import 'components/modal';
+@import 'components/modals/modal';

@@ -11,3 +11,10 @@
 .align-right {
   text-align: right;
 }
+
+.padding-top-bottom-max-height-650px {
+  height: 100%;
+  @media (max-height: 650px) {
+    padding: 20px 0;
+  }
+}
