@@ -1,4 +1,4 @@
-class InteractionHelper {
+class InteractionListeners {
 
   constructor() {
     // Compatibility - *if* device has certain GlobalEventHandler, then set a specific event listener
@@ -27,5 +27,5 @@ class InteractionHelper {
   }
 }
 
-const singleton = new InteractionHelper();
+const singleton = new InteractionListeners();
 export default singleton;

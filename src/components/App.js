@@ -6,13 +6,13 @@ import {
   Link,
   Redirect,
   withRouter}               from "react-router-dom";
-import authentication       from '../config/authentication'
+import authentication       from './helpers/authentication'
 import {MainFrame}          from './MainFrame';
 import {PageStart}          from './views/PageStart';
 import {PageNewUser}        from "./views/PageNewUser";
 import {PageAuthenticated}  from "./views/PageAuthenticated";
 import {PageNoMatch}        from "./views/PageNoMatch";
-import './helpers/InteractionHelper';
+import './helpers/interactionListeners';
 import './helpers/waves'
 
 export default class App extends React.Component {

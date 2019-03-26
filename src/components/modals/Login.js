@@ -1,5 +1,5 @@
 import React from "react"
-import authentication from '../../config/authentication'
+import authentication from '../helpers/authentication'
 import {Header} from "../Header";
 import {Button} from "../Button";
 
