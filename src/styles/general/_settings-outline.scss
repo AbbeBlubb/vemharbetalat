@@ -9,7 +9,7 @@ body:not(.user-is-tabbing) select:focus {
 /* As long as the .user-is-tabbing doesn't exist, have an own visually pleasant outline for input and textarea elements */
 body:not(.user-is-tabbing) input:focus,
 body:not(.user-is-tabbing) textarea:focus {
-  outline: 1px solid #aaa;
+  outline: 2px solid aqua; //1px solid #aaa;
 }
 
 

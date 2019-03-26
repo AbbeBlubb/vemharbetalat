@@ -10,7 +10,7 @@
         #ccc 2rem
      );
   background-size: 200% 200%;
-  animation: barberpole 20s linear infinite;
+  animation: barberpole 40s linear infinite;
 
   .page-no-match__message {
     position: absolute;
@@ -23,6 +23,7 @@
     transform: translate(-50%, -50%);
 
     font-size: 160px;
+    text-shadow: 3px 3px #000;
 
     -webkit-animation: color-change 20s infinite;
     -o-animation: color-change 20s infinite;

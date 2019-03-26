@@ -10,8 +10,10 @@
     width: 100%;
     border: 2px solid darkgray;
 
-    &:focus {
-      border: 2px solid deepskyblue;
-    }
+    // Outline property when focus is in _settings-outline.scss
+  }
+
+  &__button {
+    margin-top: 15px;
   }
 }

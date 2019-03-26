@@ -61,7 +61,7 @@ export class Login extends React.Component {
                   placeholder="Lösenord" />
             </div>
   
-            <div className='align-center'>
+            <div className='login__button align-center'>
               <Button
                   styleType={'retro'}
                   rippleEffect={false}
