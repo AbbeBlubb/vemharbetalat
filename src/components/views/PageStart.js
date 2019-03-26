@@ -20,19 +20,19 @@ export function PageStart() {
           
           {/* Re-arranging the elements in .navigation will break the ::after for the <About> component */}
 
-          <Modal render={() => <Suggestions />}>
+          <Modal render={() => <Suggestions />} useCloseButton={true}>
             <Button styleType={'transparent'} rippleEffect={false}>
               Förslag
             </Button>
           </Modal>
 
-          <Modal render={() => <About />}>
+          <Modal render={() => <About />} useCloseButton={true}>
             <Button styleType={'transparent'} rippleEffect={false}>
               Om <span />
             </Button>
           </Modal>
 
-          <Modal render={() => <Login />}>
+          <Modal render={() => <Login />} useCloseButton={false}>
             <Button styleType={'transparent'} rippleEffect={false}>
               Logga in
             </Button>

@@ -1,7 +1,7 @@
 import React from "react"
 import firebase from '../../config/firebase'
-import {Paragraph} from "../Paragraph";
 import {Header} from "../Header";
+import {Button} from "../Button";
 
 export class Login extends React.Component {
   
@@ -29,14 +29,15 @@ export class Login extends React.Component {
   
   render() {
     return (
-        <section>
+        <section className='login'>
           
           <Header level={'h3'} textAlign={'center'}>
             Logga in
           </Header>
   
           <form>
-            <div className="">
+
+            <div>
               <label form="input-email"></label>
               <input
                   value={this.state.email}
@@ -46,10 +47,9 @@ export class Login extends React.Component {
                   className="form-control"
                   id="input-email"
                   placeholder="Användarnamn" />
-                  
-              <span id="emailHelp" className=""></span>
             </div>
-            <div className="">
+            
+            <div>
               <label form="input-password"></label>
               <input
                   value={this.state.password}
@@ -60,7 +60,15 @@ export class Login extends React.Component {
                   id="input-password"
                   placeholder="Lösenord" />
             </div>
-            <button type="submit" onClick={this.login} className="">Login</button>
+  
+            <div className='align-center'>
+              <Button
+                  styleType={'retro'}
+                  rippleEffect={false}
+                  onClick={(e) => this.login(e)}>
+                Logga in
+              </Button>
+            </div>
           </form>
 
         </section>

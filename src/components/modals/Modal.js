@@ -48,23 +48,28 @@ export class Modal extends React.Component {
 
     return (
         <>
+          {/* Trigger wraps the props.children */}
           <section className='modal__container-for-trigger' onClick={() => this.showModal()}>
             {this.props.children}
           </section>
   
+          {/* The modal: background, close icon, card, props.render of component, close button */}
           <div className={varWithClasses} ref={element => this.modalBackground = element}>
             <img className='modal__close-icon' src={closeIcon} alt='Close icon'/> {/* The close icon doesn't need to fire the hideModal because of the handleClickOutsideModalCard */}
             <div className='modal__card' ref={element => this.modalCard = element}>
 
               {this.props.render()}
-
-              <div className='align-center'>
-                <span onClick={() => this.hideModal()}>
-                  <Button styleType={'retro'} rippleEffect={false}>
+  
+              {this.props.useCloseButton && (
+                <div className='align-center'>
+                  <Button
+                      styleType={'retro'}
+                      rippleEffect={false}
+                      onClick={() => this.hideModal()}>
                     Stäng
                   </Button>
-                </span>
-              </div>
+                </div>
+              )}
 
             </div>
           </div>
