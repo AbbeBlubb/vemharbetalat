@@ -1,4 +1,5 @@
 import React          from "react"
+import {Link}         from "react-router-dom";
 import {Header}       from "../Header";
 import {Instructions} from "../Instructions";
 import {Button}       from "../Button";
@@ -51,9 +52,11 @@ export function PageStart() {
             Ta reda på det nu!
           </Paragraph>
 
+          <Link to={'/new'}>
           <Button styleType={'buy'} rippleEffect={true}>
             Betala 10 kr
           </Button>
+          </Link>
           
           <Instructions />
           
