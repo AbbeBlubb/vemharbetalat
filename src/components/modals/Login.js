@@ -1,22 +1,58 @@
 import React from "react"
+import {withRouter} from "react-router-dom"
 import authentication from '../helpers/authentication'
 import {Header} from "../Header";
 import {Button} from "../Button";
+import {Paragraph} from "../Paragraph";
 
-export class Login extends React.Component {
+class Login extends React.Component {
   
   constructor(props) {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      errorMessage: ''
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleLoginError = this.handleLoginError.bind(this);
     this.login = authentication.login.bind(this);
   }
   
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+  }
+  
+  handleLoginError(errorCode) {
+    console.log('handleLoginError():', errorCode);
+    
+    switch (errorCode) {
+      
+      case 'auth/invalid-email':
+        this.setState({
+          email: '',
+          password: '',
+          errorMessage: 'Ange din e-postadress'
+        });
+        break;
+        
+      case 'auth/user-not-found':
+        this.setState({
+          password: '',
+          errorMessage: 'Användarnamnet matchar inte'
+        });
+        break;
+        
+      case 'auth/wrong-password':
+        /* Om lösenordet är felaktigt, eller om lösenord ej anges men något angetts i "användarnamn" */
+        this.setState({
+          password: '',
+          errorMessage: 'Lösenordet matchar inte'
+        });
+        break;
+        
+      default: break;
+    }
   }
   
   render() {
@@ -52,7 +88,15 @@ export class Login extends React.Component {
                   id="input-password"
                   placeholder="Lösenord" />
             </div>
+            
+            {/* Eventuellt felmeddelande */}
+            {this.state.errorMessage && (
+                <Paragraph textAlign={'center'}>
+                  {this.state.errorMessage}
+                </Paragraph>
+            )}
   
+            {/* Knapp för att logga in */}
             <div className='login__button align-center'>
               <Button
                   styleType={'retro'}
@@ -67,3 +111,5 @@ export class Login extends React.Component {
     )
   }
 }
+
+export default withRouter(Login);

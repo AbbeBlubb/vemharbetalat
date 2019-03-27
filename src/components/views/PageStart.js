@@ -8,7 +8,7 @@ import {Navigation}   from "../Navigation";
 import {Modal}        from "../modals/Modal";
 import {Suggestions}  from "../modals/Suggestions";
 import {About}        from "../modals/About";
-import {Login}        from "../modals/Login";
+import Login        from "../modals/Login";
 
 export function PageStart() {
   return (

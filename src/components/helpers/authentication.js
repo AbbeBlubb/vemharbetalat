@@ -43,7 +43,8 @@ class Authentication {
           this.props.history.push('/account');
         })
         .catch((error) => {
-          console.log(error);
+          console.error('Från login, login-error: ', error);
+          this.handleLoginError(error.code);
         });
   }
   
