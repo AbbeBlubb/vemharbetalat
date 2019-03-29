@@ -23,9 +23,11 @@ class Login extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   }
   
+  preSetUser() {
+    authentication.preSetUser()
+  }
+  
   handleLoginError(errorCode) {
-    console.log('handleLoginError():', errorCode);
-    
     switch (errorCode) {
       
       case 'auth/invalid-email':

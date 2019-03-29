@@ -1,5 +1,6 @@
 import React from "react";
 import authentication from '../helpers/authentication';
+import firebase from '../../config/firebase'
 
 export class PageNewUser extends React.Component {
   constructor(props) {
@@ -11,11 +12,16 @@ export class PageNewUser extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.createNewUser = authentication.createNewUser.bind(this);
+    //this.sendUserData = this.sendUserData.bind(this);
   }
   
     handleChange(e) {
       this.setState({ [e.target.name]: e.target.value });
     };
+  
+  preSetUser() {
+    authentication.preSetUser()
+  }
   
 
   
