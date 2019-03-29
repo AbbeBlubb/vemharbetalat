@@ -44,9 +44,10 @@ class Authentication {
           /* MEGA-PROMISE där flera saker ska göras efter varandra */
           /* NOTERA att createUserWithEmailAndPassword returnerar user.user.id, medans onAuthStateChanged returnerar user.id */
           firebase.firestore().collection('who-paid').doc(user.user.uid).set({
-            name: 'abe',
-            color: 'aqua'
-          })
+            name: 'abe4',
+            color: 'aqua',
+            timestamp: new Date()
+          });
           this.props.history.push('/account');
         })
         .catch((error) => {
