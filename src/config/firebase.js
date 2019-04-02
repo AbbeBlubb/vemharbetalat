@@ -1,6 +1,6 @@
 import firebase from 'firebase';
-//require('firebase/firestore');
 
+/* Maby only the tree first needed? */
 const config = {
   apiKey: "AIzaSyAyA_Dg0K2UUJP_KWj9JnxDJS8pbRLugqY",
   authDomain: "vem-har-betalat.firebaseapp.com",
