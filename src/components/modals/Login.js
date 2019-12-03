@@ -1,8 +1,8 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
-import {Header} from '../Header';
-import {Button} from '../Button';
-import {Paragraph} from '../Paragraph';
+import { withRouter } from 'react-router-dom';
+import { Header } from '../Header';
+import { Button } from '../Button';
+import { Paragraph } from '../Paragraph';
 
 class Login extends React.Component {
 

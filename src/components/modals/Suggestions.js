@@ -1,6 +1,6 @@
 import React from 'react';
-import {Paragraph} from '../Paragraph';
-import {Header} from '../Header';
+import { Paragraph } from '../Paragraph';
+import { Header } from '../Header';
 
 export function Suggestions() {
   return (

@@ -1,16 +1,18 @@
-import React                from 'react';
+import React from 'react';
 import {
+  // Import the BrowserRotuer or HashRouter as Router to aviod to change the component name in the JSX
   BrowserRouter as Router,
   Route,
-  Switch }                  from 'react-router-dom';
-import {MainFrame}          from './MainFrame';
-import {PageStart}          from './views/PageStart';
-import {PageNewUser}        from './views/PageNewUser';
-import {PageAuthenticated}  from './views/PageAuthenticated';
-import {PageNoMatch}        from './views/PageNoMatch';
+  Switch } from 'react-router-dom';
+import { MainFrame } from './MainFrame';
+import { PageStart } from './views/PageStart';
+import { PageNewUser } from './views/PageNewUser';
+import { PageAuthenticated } from './views/PageAuthenticated';
+import { PageNoMatch } from './views/PageNoMatch';
 import './helpers/interactionListeners';
 import './helpers/waves';
-import {ProtectedRoute} from './ProtectedRoute';
+import { ProtectedRoute } from './ProtectedRoute';
+
 
 export default class App extends React.Component {
 
