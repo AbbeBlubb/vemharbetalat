@@ -1,5 +1,5 @@
-import React from 'react'
-import {withRouter} from 'react-router-dom'
+import React from 'react';
+import {withRouter} from 'react-router-dom';
 import {Header} from '../Header';
 import {Button} from '../Button';
 import {Paragraph} from '../Paragraph';
@@ -97,7 +97,7 @@ class Login extends React.Component {
               <Button
                   styleType={'retro'}
                   rippleEffect={false}
-                  onClick={(e) => this.login(e)}>
+                  onClick={e => this.login(e)}>
                 Logga in
               </Button>
             </div>

@@ -7,7 +7,7 @@ export class PageNewUser extends React.Component {
     this.state = {
       email: '',
       password: '',
-      error: null,
+      error: null
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -30,7 +30,7 @@ export class PageNewUser extends React.Component {
               : null
           }
 
-          <form onSubmit={e => {return}}>
+          <form onSubmit={e => {return;}}>
             <input
                 type='text'
                 name='email'

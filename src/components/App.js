@@ -2,10 +2,7 @@ import React                from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
-  Link,
-  Redirect,
-  withRouter}               from 'react-router-dom';
+  Switch }                  from 'react-router-dom';
 import {MainFrame}          from './MainFrame';
 import {PageStart}          from './views/PageStart';
 import {PageNewUser}        from './views/PageNewUser';

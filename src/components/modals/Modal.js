@@ -18,15 +18,14 @@ export class Modal extends React.Component {
     }, 200);
   };
 
-  handleClickOutsideModalCard = (e) => {
-    //console.log('Clicked outside modal card - that is, on modal background?');
-    //console.log(e.target);
+  handleClickOutsideModalCard = e => {
+
     if(!this.modalCard.contains(e.target)) {
       this.hideModal();
     }
   };
 
-  escapeKeyIsPressed = (e) => {
+  escapeKeyIsPressed = e => {
     if (e.keyCode === 27) {
       this.hideModal();
     }
