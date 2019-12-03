@@ -1,6 +1,6 @@
-import React from "react"
-import {Paragraph} from "../Paragraph";
-import {Header} from "../Header";
+import React from 'react'
+import {Paragraph} from '../Paragraph';
+import {Header} from '../Header';
 
 export function About() {
   return (
@@ -13,11 +13,11 @@ export function About() {
         <Paragraph textAlign={'left'}>
           Inne i inloggat läge kan du se hur många som har betalat, vad de lämnat för avtryck (permanent), kanske en chatt med tre credits, kanske en radio.
         </Paragraph>
-        
+
         <Paragraph textAlign={'left'}>
           VemHarBetalat finns på fyra språk med respektive webadress: vemherbetalat.se, whodidpay.com, quienhapagado.com, och hejhej.ru.
         </Paragraph>
 
       </section>
-  )
+  );
 }

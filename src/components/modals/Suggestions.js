@@ -1,6 +1,6 @@
-import React from "react"
-import {Paragraph} from "../Paragraph";
-import {Header} from "../Header";
+import React from 'react'
+import {Paragraph} from '../Paragraph';
+import {Header} from '../Header';
 
 export function Suggestions() {
   return (
@@ -18,5 +18,5 @@ export function Suggestions() {
         <br/>
 
       </section>
-  )
+  );
 }

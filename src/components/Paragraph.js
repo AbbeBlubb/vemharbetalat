@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 
 export function Paragraph(props) {
   return (
@@ -7,5 +7,5 @@ export function Paragraph(props) {
           style={{textAlign: props.textAlign}}>
         {props.children}
       </p>
-  )
+  );
 }

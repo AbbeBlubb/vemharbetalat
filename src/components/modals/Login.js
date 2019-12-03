@@ -1,11 +1,11 @@
-import React from "react"
-import {withRouter} from "react-router-dom"
-import {Header} from "../Header";
-import {Button} from "../Button";
-import {Paragraph} from "../Paragraph";
+import React from 'react'
+import {withRouter} from 'react-router-dom'
+import {Header} from '../Header';
+import {Button} from '../Button';
+import {Paragraph} from '../Paragraph';
 
 class Login extends React.Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {
@@ -40,7 +40,7 @@ class Login extends React.Component {
         break;
 
       case 'auth/wrong-password':
-        /* Om lösenordet är felaktigt, eller om lösenord ej anges men något angetts i "användarnamn" */
+        /* Om lösenordet är felaktigt, eller om lösenord ej anges men något angetts i 'användarnamn' */
         this.setState({
           password: '',
           errorMessage: 'Lösenordet matchar inte'
@@ -62,27 +62,27 @@ class Login extends React.Component {
           <form>
 
             <div>
-              <label form="input-email"></label>
+              <label form='input-email'></label>
               <input
                   value={this.state.email}
                   onChange={this.handleChange}
-                  type="email"
-                  name="email"
-                  className="form-control"
-                  id="input-email"
-                  placeholder="Användarnamn" />
+                  type='email'
+                  name='email'
+                  className='form-control'
+                  id='input-email'
+                  placeholder='Användarnamn' />
             </div>
 
             <div>
-              <label form="input-password"></label>
+              <label form='input-password'></label>
               <input
                   value={this.state.password}
                   onChange={this.handleChange}
-                  type="password"
-                  name="password"
-                  className="form-control"
-                  id="input-password"
-                  placeholder="Lösenord" />
+                  type='password'
+                  name='password'
+                  className='form-control'
+                  id='input-password'
+                  placeholder='Lösenord' />
             </div>
 
             {/* Eventuellt felmeddelande */}

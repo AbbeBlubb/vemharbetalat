@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 
 export function Instructions() {
   return (
@@ -11,5 +11,5 @@ export function Instructions() {
           <li>Dela</li>
         </ol>
       </section>
-  )
+  );
 }

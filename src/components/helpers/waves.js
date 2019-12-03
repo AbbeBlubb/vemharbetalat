@@ -248,7 +248,7 @@
   
   /**
    * Delegated click handler for .waves-effect element.
-   * returns null when .waves-effect element not in "click tree"
+   * returns null when .waves-effect element not in 'click tree'
    */
   function getWavesEffectElement(e) {
     if (TouchHandler.allowEvent(e) === false) {

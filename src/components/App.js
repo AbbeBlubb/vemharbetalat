@@ -5,15 +5,15 @@ import {
   Switch,
   Link,
   Redirect,
-  withRouter}               from "react-router-dom";
+  withRouter}               from 'react-router-dom';
 import {MainFrame}          from './MainFrame';
 import {PageStart}          from './views/PageStart';
-import {PageNewUser}        from "./views/PageNewUser";
-import {PageAuthenticated}  from "./views/PageAuthenticated";
-import {PageNoMatch}        from "./views/PageNoMatch";
+import {PageNewUser}        from './views/PageNewUser';
+import {PageAuthenticated}  from './views/PageAuthenticated';
+import {PageNoMatch}        from './views/PageNoMatch';
 import './helpers/interactionListeners';
-import './helpers/waves'
-import {ProtectedRoute} from "./ProtectedRoute";
+import './helpers/waves';
+import {ProtectedRoute} from './ProtectedRoute';
 
 export default class App extends React.Component {
 

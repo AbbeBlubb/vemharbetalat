@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 
 export class PageNewUser extends React.Component {
@@ -32,15 +32,15 @@ export class PageNewUser extends React.Component {
 
           <form onSubmit={e => {return}}>
             <input
-                type="text"
-                name="email"
-                placeholder="Email"
+                type='text'
+                name='email'
+                placeholder='Email'
                 value={this.state.email}
                 onChange={this.handleChange} />
             <input
-                type="password"
-                name="password"
-                placeholder="Password"
+                type='password'
+                name='password'
+                placeholder='Password'
                 value={this.state.password}
                 onChange={this.handleChange} />
             <button>Register</button>

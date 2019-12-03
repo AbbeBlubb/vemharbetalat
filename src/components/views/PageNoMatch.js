@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 export function PageNoMatch() {
   return (
@@ -9,5 +9,5 @@ export function PageNoMatch() {
           </span>
         </section>
       </div>
-  )
+  );
 }

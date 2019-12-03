@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 export function Button(props) {
   return (
@@ -7,5 +7,5 @@ export function Button(props) {
           onClick={props.onClick}>
         {props.children}
       </button>
-  )
+  );
 }
