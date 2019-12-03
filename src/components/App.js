@@ -6,7 +6,6 @@ import {
   Link,
   Redirect,
   withRouter}               from "react-router-dom";
-import authentication       from './helpers/authentication'
 import {MainFrame}          from './MainFrame';
 import {PageStart}          from './views/PageStart';
 import {PageNewUser}        from "./views/PageNewUser";
@@ -18,14 +17,6 @@ import {ProtectedRoute} from "./ProtectedRoute";
 
 export default class App extends React.Component {
 
-  componentDidMount() {
-    authentication.authListener();
-  }
-  
-  componentWillUnmount() {
-  
-  }
-  
   render() {
     return (
       <MainFrame>

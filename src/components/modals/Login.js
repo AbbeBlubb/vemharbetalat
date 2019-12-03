@@ -1,6 +1,5 @@
 import React from "react"
 import {withRouter} from "react-router-dom"
-import authentication from '../helpers/authentication'
 import {Header} from "../Header";
 import {Button} from "../Button";
 import {Paragraph} from "../Paragraph";
@@ -16,20 +15,15 @@ class Login extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleLoginError = this.handleLoginError.bind(this);
-    this.login = authentication.login.bind(this);
   }
-  
+
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
-  
-  preSetUser() {
-    authentication.preSetUser()
-  }
-  
+
   handleLoginError(errorCode) {
     switch (errorCode) {
-      
+
       case 'auth/invalid-email':
         this.setState({
           email: '',
@@ -37,14 +31,14 @@ class Login extends React.Component {
           errorMessage: 'Ange din e-postadress'
         });
         break;
-        
+
       case 'auth/user-not-found':
         this.setState({
           password: '',
           errorMessage: 'Användarnamnet matchar inte'
         });
         break;
-        
+
       case 'auth/wrong-password':
         /* Om lösenordet är felaktigt, eller om lösenord ej anges men något angetts i "användarnamn" */
         this.setState({
@@ -52,19 +46,19 @@ class Login extends React.Component {
           errorMessage: 'Lösenordet matchar inte'
         });
         break;
-        
+
       default: break;
     }
   }
-  
+
   render() {
     return (
         <section className='login'>
-          
+
           <Header level={'h3'} textAlign={'center'}>
             Logga in
           </Header>
-  
+
           <form>
 
             <div>
@@ -78,7 +72,7 @@ class Login extends React.Component {
                   id="input-email"
                   placeholder="Användarnamn" />
             </div>
-            
+
             <div>
               <label form="input-password"></label>
               <input
@@ -90,14 +84,14 @@ class Login extends React.Component {
                   id="input-password"
                   placeholder="Lösenord" />
             </div>
-            
+
             {/* Eventuellt felmeddelande */}
             {this.state.errorMessage && (
                 <Paragraph textAlign={'center'}>
                   {this.state.errorMessage}
                 </Paragraph>
             )}
-  
+
             {/* Knapp för att logga in */}
             <div className='login__button align-center'>
               <Button
@@ -110,7 +104,7 @@ class Login extends React.Component {
           </form>
 
         </section>
-    )
+    );
   }
 }
 
