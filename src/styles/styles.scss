@@ -1,14 +1,19 @@
 /* Url till bilder i CSS:en ska göras relativt till styles.scss, inte till det enskilda CSS-bladet */
 
+// Libraries
+@import 'src/libraries/waves';
+
+// General CSS
 @import 'general/settings';
 @import 'general/settings-outline';
 @import 'general/helpers';
-@import 'src/libraries/waves';
 @import 'general/z-indexes';
 
+// Views
 @import 'components/main-frame';
 @import 'components/views/page-no-match.scss';
 
+// Components
 @import 'components/content-wrapper';
 @import 'components/navigation';
 @import 'components/header';
