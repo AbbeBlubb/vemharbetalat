@@ -9,13 +9,4 @@
     display: block;
     text-align: right;
   }
-
-  /* If re-arranging the elements, the ::after will have no effect */
-  & section > button > span::after {
-    content: 'VHB';
-
-    @media (min-width: 420px) {
-      content: 'VemHarBetalat';
-    }
-  }
 }

@@ -10,7 +10,7 @@ import { PageNewUser } from './views/PageNewUser';
 import { PageAuthenticated } from './views/PageAuthenticated';
 import { PageNoMatch } from './views/PageNoMatch';
 import './helpers/interactionListeners';
-import './helpers/waves';
+import '../libraries/waves';
 import { ProtectedRoute } from './ProtectedRoute';
 
 

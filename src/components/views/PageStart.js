@@ -1,49 +1,34 @@
-import React            from 'react';
-import { Link }         from 'react-router-dom';
-import { Header }       from '../Header';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Header } from '../Header';
 import { Instructions } from '../Instructions';
-import { Button }       from '../Button';
-import { Paragraph }    from '../Paragraph';
-import { Navigation }   from '../Navigation';
-import { Modal }        from '../modals/Modal';
-import { Suggestions }  from '../modals/Suggestions';
-import { About }        from '../modals/About';
-import Login            from '../modals/Login';
+import { Button } from '../Button';
+import { Paragraph } from '../Paragraph';
+import { Navigation } from '../Navigation';
+import { Modal } from '../modals/Modal';
+import { AboutContentForModal } from '../modals/AboutContentForModal';
+import LoginContentForModal from '../modals/LoginContentForModal';
+import { ContentWrapper } from '../ContentWrapper';
+
 
 export function PageStart() {
   return (
-      <div className='page-start'>
-
-        {/* Menu */}
-
+      <>
         <Navigation>
-
-          {/* Re-arranging the elements in .navigation will break the ::after for the <About> component */}
-
-          <Modal render={() => <Suggestions />} useCloseButton={true}>
+          <Modal render={() => <AboutContentForModal />} useCloseButton={true}>
             <Button styleType={'transparent'} rippleEffect={false}>
-              Förslag
+              Om VHB
             </Button>
           </Modal>
 
-          <Modal render={() => <About />} useCloseButton={true}>
-            <Button styleType={'transparent'} rippleEffect={false}>
-              Om <span />
-            </Button>
-          </Modal>
-
-          <Modal render={() => <Login />} useCloseButton={false}>
+          <Modal render={() => <LoginContentForModal />} useCloseButton={false}>
             <Button styleType={'transparent'} rippleEffect={false}>
               Logga in
             </Button>
           </Modal>
-
         </Navigation>
 
-        {/* Content */}
-
-        <div className='page-start__content'>
-
+        <ContentWrapper styleType={'column'}>
           <Header level={'h1'} textAlign={'center'}>
             Vem har betalat för att se vem som har betalat?
           </Header>
@@ -53,15 +38,13 @@ export function PageStart() {
           </Paragraph>
 
           <Link to={'/new'}>
-          <Button styleType={'buy'} rippleEffect={true}>
-            Betala 10 kr
-          </Button>
+            <Button styleType={'buy'} rippleEffect={true}>
+              Betala 10 kr
+            </Button>
           </Link>
 
           <Instructions />
-
-        </div>
-
-      </div>
+        </ContentWrapper>
+      </>
   );
 }

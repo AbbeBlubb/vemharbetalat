@@ -2,10 +2,9 @@ import React from 'react';
 import {Paragraph} from '../Paragraph';
 import {Header} from '../Header';
 
-export function About() {
+export function AboutContentForModal() {
   return (
       <section>
-
         <Header level={'h3'} textAlign={'center'}>
           Om VemHarBetalat
         </Header>
@@ -17,7 +16,6 @@ export function About() {
         <Paragraph textAlign={'left'}>
           VemHarBetalat finns på fyra språk med respektive webadress: vemherbetalat.se, whodidpay.com, quienhapagado.com, och hejhej.ru.
         </Paragraph>
-
       </section>
   );
 }
