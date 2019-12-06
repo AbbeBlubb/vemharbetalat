@@ -11,7 +11,7 @@ import LoginContentForModal from '../modals/LoginContentForModal';
 import { ContentWrapper } from '../ContentWrapper';
 
 
-export function PageStart() {
+export function PageStart(props) {
   return (
       <>
         <Navigation>
@@ -37,11 +37,9 @@ export function PageStart() {
             Ta reda på det nu!
           </Paragraph>
 
-          <Link to={'/new'}>
-            <Button styleType={'buy'} rippleEffect={true}>
-              Betala 10 kr
-            </Button>
-          </Link>
+          <Button styleType={'buy'} rippleEffect={true} onClick={() => props.history.push('/new')}>
+            Betala 10 kr
+          </Button>
 
           <Instructions />
         </ContentWrapper>

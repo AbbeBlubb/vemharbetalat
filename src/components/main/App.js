@@ -5,13 +5,13 @@ import {
   Route,
   Switch } from 'react-router-dom';
 import { MainFrame } from './MainFrame';
-import { PageStart } from './views/PageStart';
-import { PageNewUser } from './views/PageNewUser';
-import { PageAuthenticated } from './views/PageAuthenticated';
-import { PageNoMatch } from './views/PageNoMatch';
-import './helpers/interactionListeners';
-import '../libraries/waves';
-import { ProtectedRoute } from './ProtectedRoute';
+import { PageStart } from '../views/PageStart';
+import { PageNewUser } from '../views/PageNewUser';
+import { PageAuthenticated } from '../views/PageAuthenticated';
+import { PageNoMatch } from '../views/PageNoMatch';
+import '../helpers/interactionListeners';
+import '../../libraries/waves';
+import { ProtectedRoute } from '../ProtectedRoute';
 
 
 export default class App extends React.Component {

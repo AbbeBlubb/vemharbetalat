@@ -6,8 +6,8 @@ export function Instructions() {
         <div className='instructions__header'>Gör så här</div>
         <ol>
           <li>Klicka för att betala 10 kr</li>
-          <li>Se vem som har betalat och lämna ett avtryck</li>
-          <li>Du får automatiskt en inloggning för att kunna komma tillbaka (gratis)</li>
+          <li>Lämna ett avtryck</li>
+          <li>Se vilka som har betalat! Du får en inloggning för att kunna komma tillbaka</li>
           <li>Dela</li>
         </ol>
       </section>
