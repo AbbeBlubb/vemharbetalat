@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../Button';
+import { ModalOptionalCloseButton } from './modalOptionalCloseButton';
 import closeIcon from '../../assets/baseline_highlight_off_white_48dp.png';
 
 export class Modal extends React.Component {
@@ -60,16 +60,10 @@ export class Modal extends React.Component {
 
               {this.props.render()}
 
-              {this.props.useCloseButton && (
-                <div className='align-center'>
-                  <Button
-                      styleType={'retro'}
-                      rippleEffect={false}
-                      onClick={() => this.hideModal()}>
-                    Stäng
-                  </Button>
-                </div>
-              )}
+              <ModalOptionalCloseButton
+                useCloseButton={this.props.useCloseButton}
+                hideModal={this.hideModal}
+              />
 
             </div>
           </div>
