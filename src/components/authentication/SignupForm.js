@@ -1,11 +1,16 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import * as actions from '../../actions'
 
 
 class SignupForm extends React.Component {
 
   onSubmit = (formProps) => {
     console.log(formProps);
+    console.log(this.props);
+    this.props.signup(formProps);
   }
 
   render() {
@@ -40,4 +45,12 @@ class SignupForm extends React.Component {
   }
 }
 
-export default reduxForm({ form: 'signup'})(SignupForm);
+// Pass HOCs to compose, that will apply it to the (SignupForm)
+export default compose(
+  // connect args: state, the imported actions object
+  connect(null, actions),
+  // The 'signup' will be accessible in this.props
+  reduxForm({ form: 'signup'})
+)(SignupForm);
+
+//export default reduxForm({ form: 'signup'})(SignupForm);
