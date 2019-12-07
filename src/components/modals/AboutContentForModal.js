@@ -10,7 +10,9 @@ export function AboutContentForModal() {
       </Header>
 
       <Paragraph textAlign={'left'}>
-        Nyfiken? Inne i inloggat läge kan du se hur många som har betalat för att se vilka som har betalat, och läsa allas avtryck. Vad har de skrivit? Betala nu!
+        Nyfiken?
+        Inne i inloggat läge kan du se hur många som har betalat för att se vilka som har betalat, och läsa allas avtryck.
+        Hur många är de? Vad har de skrivit? Ta reda på det nu!
       </Paragraph>
 
       <Paragraph textAlign={'left'}>
