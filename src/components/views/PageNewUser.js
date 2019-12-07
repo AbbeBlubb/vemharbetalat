@@ -18,35 +18,35 @@ export class PageNewUser extends React.Component {
 
   render() {
     return (
-        <div className='padding-top-bottom-max-height-650px'>
-          New user
-          <br/>
-          Här ska user få sina inloggningsuppgifter samt fylla i några uppgifter
+      <div className='padding-top-bottom-max-height-650px'>
+        New user
+        <br/>
+        Här ska user få sina inloggningsuppgifter samt fylla i några uppgifter
 
-          <div>Register</div>
+        <div>Register</div>
 
-          {this.state.error
-              ? <div>{this.state.error.message}</div>
-              : null
-          }
+        {this.state.error
+            ? <div>{this.state.error.message}</div>
+            : null
+        }
 
-          <form onSubmit={e => {return;}}>
-            <input
-                type='text'
-                name='email'
-                placeholder='Email'
-                value={this.state.email}
-                onChange={this.handleChange} />
-            <input
-                type='password'
-                name='password'
-                placeholder='Password'
-                value={this.state.password}
-                onChange={this.handleChange} />
-            <button>Register</button>
-          </form>
+        <form onSubmit={e => {return;}}>
+          <input
+              type='text'
+              name='email'
+              placeholder='Email'
+              value={this.state.email}
+              onChange={this.handleChange} />
+          <input
+              type='password'
+              name='password'
+              placeholder='Password'
+              value={this.state.password}
+              onChange={this.handleChange} />
+          <button>Register</button>
+        </form>
 
-        </div>
+      </div>
     );
   }
 }

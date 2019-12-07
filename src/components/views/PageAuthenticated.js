@@ -10,9 +10,9 @@ export class PageAuthenticated extends React.Component {
 
   render() {
     return (
-        <div className='padding-top-bottom-max-height-650px'>
-          Yay! Logged in! <button onClick={console.log('Stek')}>LogOut</button>
-        </div>
+      <div className='padding-top-bottom-max-height-650px'>
+        Yay! Logged in! <button onClick={console.log('Stek')}>LogOut</button>
+      </div>
     );
   }
 }

@@ -12,36 +12,36 @@ import { ContentWrapper } from '../ContentWrapper';
 
 export function PageStart(props) {
   return (
-      <>
-        <Navigation>
-          <Modal renderContent={() => <AboutContentForModal />} useCloseButton={true}>
-            <Button styleType={'transparent'} rippleEffect={false}>
-              Om VHB
-            </Button>
-          </Modal>
-
-          <Modal renderContent={() => <LoginContentForModal />} useCloseButton={false}>
-            <Button styleType={'transparent'} rippleEffect={false}>
-              Logga in
-            </Button>
-          </Modal>
-        </Navigation>
-
-        <ContentWrapper styleType={'column'}>
-          <Header level={'h1'} textAlign={'center'}>
-            Vem har betalat för att se vem som har betalat?
-          </Header>
-
-          <Paragraph textAlign={'left'}>
-            Ta reda på det nu!
-          </Paragraph>
-
-          <Button styleType={'buy'} rippleEffect={true} onClick={() => props.history.push('/new')}>
-            Betala 10 kr
+    <>
+      <Navigation>
+        <Modal renderContent={() => <AboutContentForModal />} useCloseButton={true}>
+          <Button styleType={'transparent'} rippleEffect={false}>
+            Om VHB
           </Button>
+        </Modal>
 
-          <Instructions />
-        </ContentWrapper>
-      </>
+        <Modal renderContent={() => <LoginContentForModal />} useCloseButton={false}>
+          <Button styleType={'transparent'} rippleEffect={false}>
+            Logga in
+          </Button>
+        </Modal>
+      </Navigation>
+
+      <ContentWrapper styleType={'column'}>
+        <Header level={'h1'} textAlign={'center'}>
+          Vem har betalat för att se vem som har betalat?
+        </Header>
+
+        <Paragraph textAlign={'left'}>
+          Ta reda på det nu!
+        </Paragraph>
+
+        <Button styleType={'buy'} rippleEffect={true} onClick={() => props.history.push('/new')}>
+          Betala 10 kr
+        </Button>
+
+        <Instructions />
+      </ContentWrapper>
+    </>
   );
 }
