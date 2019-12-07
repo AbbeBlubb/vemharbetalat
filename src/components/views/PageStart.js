@@ -14,13 +14,13 @@ export function PageStart(props) {
   return (
       <>
         <Navigation>
-          <Modal render={() => <AboutContentForModal />} useCloseButton={true}>
+          <Modal renderContent={() => <AboutContentForModal />} useCloseButton={true}>
             <Button styleType={'transparent'} rippleEffect={false}>
               Om VHB
             </Button>
           </Modal>
 
-          <Modal render={() => <LoginContentForModal />} useCloseButton={false}>
+          <Modal renderContent={() => <LoginContentForModal />} useCloseButton={false}>
             <Button styleType={'transparent'} rippleEffect={false}>
               Logga in
             </Button>

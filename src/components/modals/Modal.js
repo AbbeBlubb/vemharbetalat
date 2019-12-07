@@ -39,28 +39,28 @@ export class Modal extends React.Component {
 
     return (
         <>
-          <ModalTriggerToOpen 
+          <ModalTriggerToOpen
             children={this.props.children}
             showModal={this.showModal}
           />
 
-          {/* The modal: background, close icon, card, props.render of component, close button */}
+          {/* The modal background */}
           <div
             className={varWithClasses}
             onClick={() => this.hideModal()}
           >
-            
-            {/* Close icon. If click on the close icon, the click event will bubble to parent where the event is catched */}
-            <img 
+
+            {/* Close icon. Click events bubbles to parent where it's catched */}
+            <img
               className='modal__close-icon'
               src={closeIcon}
               alt='Close icon'
             />
-            
-            {/* Modal card-tile */}
+
+            {/* Modal card-tile. Click events are stopped from bubbeling */}
             <div className='modal__card' onClick={event => event.stopPropagation()}>
 
-              {this.props.render()}
+              {this.props.renderContent()}
 
               <ModalOptionalCloseButton
                 useCloseButton={this.props.useCloseButton}
