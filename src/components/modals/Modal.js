@@ -1,4 +1,5 @@
 import React from 'react';
+import { ModalTriggerToOpen } from './modalTriggerToOpen';
 import { ModalOptionalCloseButton } from './modalOptionalCloseButton';
 import closeIcon from '../../assets/baseline_highlight_off_white_48dp.png';
 
@@ -47,10 +48,10 @@ export class Modal extends React.Component {
 
     return (
         <>
-          {/* Trigger wraps the props.children */}
-          <section className='modal__container-for-trigger' onClick={() => this.showModal()}>
-            {this.props.children}
-          </section>
+          <ModalTriggerToOpen 
+            children={this.props.children}
+            showModal={this.showModal}
+          />
 
           {/* The modal: background, close icon, card, props.render of component, close button */}
           <div className={varWithClasses} ref={element => this.modalBackground = element}>
