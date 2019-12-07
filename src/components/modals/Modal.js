@@ -19,13 +19,6 @@ export class Modal extends React.Component {
     }, 100);
   };
 
-  handleClickOutsideModalCard = e => {
-
-    if(!this.modalCard.contains(e.target)) {
-      this.hideModal();
-    }
-  };
-
   escapeKeyIsPressed = e => {
     if (e.keyCode === 27) {
       this.hideModal();
@@ -33,12 +26,10 @@ export class Modal extends React.Component {
   }
 
   componentDidMount() {
-    this.modalBackground.addEventListener('mousedown', this.handleClickOutsideModalCard, false);
     window.addEventListener('keydown', this.escapeKeyIsPressed, false);
   }
 
   componentWillUnmount() {
-    this.modalBackground.removeEventListener('mousedown', this.handleClickOutsideModalCard, false);
     window.removeEventListener('keydown', this.escapeKeyIsPressed, false);
   }
 
@@ -54,10 +45,20 @@ export class Modal extends React.Component {
           />
 
           {/* The modal: background, close icon, card, props.render of component, close button */}
-          <div className={varWithClasses} ref={element => this.modalBackground = element}>
-            <img className='modal__close-icon' src={closeIcon} alt='Close icon'/>
-            {/* The close icon doesn't need to fire the hideModal because of the handleClickOutsideModalCard */}
-            <div className='modal__card' ref={element => this.modalCard = element}>
+          <div
+            className={varWithClasses}
+            onClick={() => this.hideModal()}
+          >
+            
+            {/* Close icon. If click on the close icon, the click event will bubble to parent where the event is catched */}
+            <img 
+              className='modal__close-icon'
+              src={closeIcon}
+              alt='Close icon'
+            />
+            
+            {/* Modal card-tile */}
+            <div className='modal__card' onClick={event => event.stopPropagation()}>
 
               {this.props.render()}
 
