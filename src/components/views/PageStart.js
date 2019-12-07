@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Header } from '../Header';
 import { Instructions } from '../Instructions';
 import { Button } from '../Button';

@@ -8,7 +8,7 @@
  */
 
 ;(function(window) {
-  'use strict';
+  //'use strict';
   
   var Waves = Waves || {};
   var $$ = document.querySelectorAll.bind(document);

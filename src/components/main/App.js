@@ -9,9 +9,13 @@ import { PageStart } from '../views/PageStart';
 import { PageNewUser } from '../views/PageNewUser';
 import { PageAuthenticated } from '../views/PageAuthenticated';
 import { PageNoMatch } from '../views/PageNoMatch';
-import '../helpers/interactionListeners';
+import { OutlineHandler } from './OutlineHandler';
 import '../../libraries/waves';
 import { ProtectedRoute } from '../ProtectedRoute';
+
+
+// Handle outlines when tabbing and clicking
+const outlineHandlerSingleton = new OutlineHandler();
 
 
 export default class App extends React.Component {
