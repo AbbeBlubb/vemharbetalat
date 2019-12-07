@@ -10,11 +10,11 @@ export function AboutContentForModal() {
       </Header>
 
       <Paragraph textAlign={'left'}>
-        Inne i inloggat läge kan du se hur många som har betalat, vad de lämnat för avtryck (permanent), kanske en chatt med tre credits, kanske en radio.
+        Nyfiken? Inne i inloggat läge kan du se hur många som har betalat för att se vilka som har betalat, och läsa allas avtryck. Vad har de skrivit? Betala nu!
       </Paragraph>
 
       <Paragraph textAlign={'left'}>
-        VemHarBetalat finns på fyra språk med respektive webadress: vemherbetalat.se, whodidpay.com, quienhapagado.com, och hejhej.ru.
+        VemHarBetalat utvecklas på min fritid. Det är en rolig grej.
       </Paragraph>
     </section>
   );
