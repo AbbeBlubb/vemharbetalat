@@ -1,10 +1,9 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import { Header } from '../Header';
 import { LoginForm } from '../authentication/LoginForm';
 
 
-class LoginContentForModal extends React.Component {
+export class LoginContentForModal extends React.Component {
 
   render() {
     return (
@@ -18,5 +17,3 @@ class LoginContentForModal extends React.Component {
     );
   }
 }
-
-export default withRouter(LoginContentForModal);

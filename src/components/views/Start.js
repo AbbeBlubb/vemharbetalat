@@ -6,7 +6,7 @@ import { Paragraph } from '../Paragraph';
 import { Navigation } from '../Navigation';
 import { Modal } from '../modals/Modal';
 import { AboutContentForModal } from '../modals/AboutContentForModal';
-import LoginContentForModal from '../modals/LoginContentForModal';
+import { LoginContentForModal } from '../modals/LoginContentForModal';
 import { ContentWrapper } from '../ContentWrapper';
 
 
