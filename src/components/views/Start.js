@@ -10,7 +10,7 @@ import LoginContentForModal from '../modals/LoginContentForModal';
 import { ContentWrapper } from '../ContentWrapper';
 
 
-export function PageStart(props) {
+export function Start(props) {
   return (
     <>
       <Navigation>

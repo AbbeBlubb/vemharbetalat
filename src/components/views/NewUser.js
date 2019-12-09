@@ -1,13 +1,14 @@
 import React from 'react';
-import { SignupForm } from '../authentication/SignupForm';
+import SignupForm from '../authentication/SignupForm';
+import { ContentWrapper } from '../ContentWrapper';
 
 
-export class PageNewUser extends React.Component {
+export class NewUser extends React.Component {
 
 
   render() {
     return (
-      <div className='padding-top-bottom-max-height-650px'>
+      <ContentWrapper>
         New user
         <br/>
         Här ska user få sina inloggningsuppgifter samt fylla i några uppgifter
@@ -16,7 +17,7 @@ export class PageNewUser extends React.Component {
 
         <SignupForm />
 
-      </div>
+      </ContentWrapper>
     );
   }
 }

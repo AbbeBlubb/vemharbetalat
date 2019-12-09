@@ -1,17 +1,13 @@
 import React from 'react';
-import {
-  // Import the BrowserRotuer or HashRouter as Router to aviod to change the component name in the JSX
-  BrowserRouter as Router,
-  Route,
-  Switch } from 'react-router-dom';
+// Import the BrowserRotuer or HashRouter as Router to aviod to change the component name in the JSX
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { MainFrame } from './MainFrame';
-import { PageStart } from '../views/PageStart';
-import { PageNewUser } from '../views/PageNewUser';
-import { PageAuthenticated } from '../views/PageAuthenticated';
-import { PageNoMatch } from '../views/PageNoMatch';
+import { Start } from '../views/Start';
+import { NewUser } from '../views/NewUser';
+import Watch from '../views/Watch';
+import { NoMatch } from '../views/NoMatch';
 import { OutlineHandler } from './OutlineHandler';
 import '../../libraries/waves';
-import { ProtectedRoute } from '../ProtectedRoute';
 
 
 // Handle outlines when tabbing and clicking
@@ -26,10 +22,10 @@ export default class App extends React.Component {
         <Router>
           {/* Switch renders only the first match, thus the possibility for the NoMatch component */}
           <Switch>
-            <Route exact    path='/'        component={PageStart}         />
-            <Route          path='/new'     component={PageNewUser}       />
-            <ProtectedRoute path='/account' component={PageAuthenticated} />
-            <Route                          component={PageNoMatch}       />
+            <Route exact path='/' component={Start} />
+            <Route path='/new' component={NewUser} />
+            <Route path='/watch' component={Watch} />
+            <Route component={NoMatch} />
           </Switch>
         </Router>
       </MainFrame>

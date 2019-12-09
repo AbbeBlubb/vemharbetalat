@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 
 export const ProtectedRoute = ({ component: Component, ...rest }) => {
   return (
-    /*<Route {...rest} render={props => {
+    <Route {...rest} render={props => {
         if (authentication.isAuthenticated()) { console.log('ProtectedRoute, auth: ', authentication.isAuthenticated()); return <Component {...props} />;
         } else {
           console.log('Redirect back home from ProtectedRoute');
@@ -20,7 +20,7 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => {
         return;
         }
       }}
-    />*/
+    />
     <div>Hello</div>
   );
 };
