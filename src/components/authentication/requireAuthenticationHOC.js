@@ -14,7 +14,6 @@ export const requireAuthenticationHOC = ChildComponent => {
 
     shouldNavigateToStart() {
       if (!localStorage.getItem('token') ) {
-        console.log('Not authenticated for /watch');
         this.props.history.push('/');
       }
     }
