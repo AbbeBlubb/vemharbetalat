@@ -1,23 +1,28 @@
 import React from 'react';
+import { Header } from '../Header';
+import { Button } from '../Button';
+import { Paragraph } from '../Paragraph';
+import { Navigation } from '../Navigation';
 import SignupForm from '../authentication/SignupForm';
-import { ContentWrapper } from '../ContentWrapper';
 
 
 export class NewUser extends React.Component {
 
-
   render() {
     return (
-      <ContentWrapper>
-        New user
-        <br/>
-        Här ska user få sina inloggningsuppgifter samt fylla i några uppgifter
+      <>
+        <Navigation>
+          <Button styleType={'transparent'} rippleEffect={false} onClick={() => this.props.history.push('/')}>
+            &#60;&#60; Tillbaka
+          </Button>
+        </Navigation>
 
-        <div>Register</div>
+        <Header level={'h3'}>
+          Skapa inloggning
+        </Header>
 
         <SignupForm />
-
-      </ContentWrapper>
+      </>
     );
   }
 }

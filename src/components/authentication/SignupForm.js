@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
+import { Button } from '../Button';
 
 
 class SignupForm extends React.Component {
@@ -70,7 +71,7 @@ class SignupForm extends React.Component {
       <>
         <form onSubmit={event => this.handleSignup(event)}>
 
-          <label htmlFor='email'>Användarnamn</label>
+          <label htmlFor='email'>Användarnamn 1-20 tecken</label>
           <input
             type='text'
             required
@@ -80,7 +81,7 @@ class SignupForm extends React.Component {
             onChange={this.handleChange}
           />
 
-          <label htmlFor='password'>Lösenord</label>
+          <label htmlFor='password'>Lösenord 1-20 tecken</label>
           <input
             type='password'
             required
@@ -92,7 +93,14 @@ class SignupForm extends React.Component {
 
           {this.state.error && <div>{this.state.error.message}</div>}
 
-          <button type='submit'>Register</button>
+          <div className={'align-center'}>
+            <Button
+              styleType={'retro'}
+              rippleEffect={false}
+              onClick={() => console.log('signupform klick')}>
+              Register
+            </Button>
+          </div>
         </form>
       </>
     );

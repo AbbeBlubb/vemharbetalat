@@ -5,6 +5,7 @@
 
 // General CSS
 @import 'general/settings';
+@import 'general/settings-input';
 @import 'general/settings-outline';
 @import 'general/helpers';
 @import 'general/z-indexes';
@@ -21,4 +22,3 @@
 @import 'components/instructions';
 @import 'components/button';
 @import 'components/modals/modal';
-@import 'components/modals/login-content-for-modal';
