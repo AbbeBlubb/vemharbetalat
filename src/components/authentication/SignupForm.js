@@ -47,7 +47,7 @@ class SignupForm extends React.Component {
       return new Promise((resolve, reject) => {
         this.setState({ token: data.token || false });
         resolve(data.token);
-      })
+      });
     })
 
     .then(token => {
@@ -69,7 +69,9 @@ class SignupForm extends React.Component {
   render() {
     return (
       <>
-        <form onSubmit={event => this.handleSignup(event)}>
+        <form
+          className={'signup-form'}
+          onSubmit={event => this.handleSignup(event)}>
 
           <label htmlFor='email'>Användarnamn 1-20 tecken</label>
           <input
@@ -93,12 +95,11 @@ class SignupForm extends React.Component {
 
           {this.state.error && <div>{this.state.error.message}</div>}
 
-          <div className={'align-center'}>
+          <div className={'signup-form__submit-button-wrapper'}>
             <Button
               styleType={'retro'}
-              rippleEffect={false}
-              onClick={() => console.log('signupform klick')}>
-              Register
+              rippleEffect={false}>
+              Titta in
             </Button>
           </div>
         </form>

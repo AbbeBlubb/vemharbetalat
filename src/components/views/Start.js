@@ -7,7 +7,7 @@ import { Navigation } from '../Navigation';
 import { Modal } from '../modals/Modal';
 import { AboutContentForModal } from '../modals/AboutContentForModal';
 import { LoginContentForModal } from '../modals/LoginContentForModal';
-import { ContentWrapper } from '../ContentWrapper';
+import { ContentWrapper } from '../contentWrapper';
 
 
 export function Start(props) {

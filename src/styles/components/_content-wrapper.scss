@@ -2,6 +2,10 @@
 
   /* Column styleType*/
 
+  &__column-first-layer {
+    //None
+  }
+
   &__column {
     min-height: calc(100vh - 100px);
     display: flex;
@@ -15,5 +19,21 @@
       height: 800px;
       // Smooth responsivity on height because of the &__column min-height: calc(100vh - 100px) of the parent, whereas here on child, height 900 and height 800
     }
+  }
+
+  /* Middle styleType */
+
+  &__middle-first-layer {
+    display: flex;
+    flex-direction: column;;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80%;
+  }
+
+  &__middle {
+    max-width: 500px;
+    text-align: center;
   }
 }

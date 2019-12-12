@@ -4,7 +4,10 @@ export function Paragraph(props) {
   return (
     <p
         className='paragraph'
-        style={{textAlign: props.textAlign}}>
+        style={{
+          textAlign: props.textAlign || null,
+          fontStyle: props.fontStyle || null
+        }}>
       {props.children}
     </p>
   );

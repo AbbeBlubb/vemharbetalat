@@ -4,6 +4,7 @@ import { Button } from '../Button';
 import { Paragraph } from '../Paragraph';
 import { Navigation } from '../Navigation';
 import SignupForm from '../authentication/SignupForm';
+import { ContentWrapper } from '../contentWrapper';
 
 
 export class NewUser extends React.Component {
@@ -17,11 +18,18 @@ export class NewUser extends React.Component {
           </Button>
         </Navigation>
 
-        <Header level={'h3'}>
-          Skapa inloggning
-        </Header>
+        <ContentWrapper styleType={'middle'}>
+          <Header level={'h3'}>
+            Skapa inloggning
+          </Header>
 
-        <SignupForm />
+          <Paragraph fontStyle={'italic'}>
+            Kampanj - just nu gratis!
+          </Paragraph>
+
+          <SignupForm />
+
+        </ContentWrapper>
       </>
     );
   }
