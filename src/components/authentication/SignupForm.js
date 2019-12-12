@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
 import { Button } from '../Button';
+import { Paragraph } from '../Paragraph';
 
 
 class SignupForm extends React.Component {
@@ -10,7 +11,7 @@ class SignupForm extends React.Component {
       email: '',
       password: '',
       token: null,
-      error: null
+      errorMessage: null
     };
   }
 
@@ -35,8 +36,8 @@ class SignupForm extends React.Component {
       if (!response.ok) {
         const body = response.json();
         console.log('Response not ok: ', body) // This fires before the json() promise is ready
-        const message = Object.keys(body)[0]; // Undefined, probably because of this must be in a promise
-        this.setState({ error: message });
+        const errorMessage = Object.keys(body)[0]; // Undefined, probably because of this must be in a promise
+        this.setState({ errorMessage });
         throw Error(response.statusText);
       } else {
         return response.json();
@@ -75,6 +76,7 @@ class SignupForm extends React.Component {
 
           <label htmlFor='email'>Användarnamn 1-20 tecken</label>
           <input
+            className={'signup-form__input'}
             type='text'
             required
             name='email'
@@ -85,6 +87,7 @@ class SignupForm extends React.Component {
 
           <label htmlFor='password'>Lösenord 1-20 tecken</label>
           <input
+            className={'signup-form__input'}
             type='password'
             required
             name='password'
@@ -93,7 +96,12 @@ class SignupForm extends React.Component {
             onChange={this.handleChange}
           />
 
-          {this.state.error && <div>{this.state.error.message}</div>}
+          {/* Eventuellt felmeddelande */}
+          {this.state.errorMessage && (
+              <Paragraph textAlign={'center'}>
+                {this.state.errorMessage}
+              </Paragraph>
+          )}
 
           <div className={'signup-form__submit-button-wrapper'}>
             <Button
