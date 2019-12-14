@@ -3,10 +3,11 @@ import React from 'react';
 export function Paragraph(props) {
   return (
     <p
-        className='paragraph'
+        className={`paragraph paragraph__${props.styleType}`}
         style={{
           textAlign: props.textAlign || null,
-          fontStyle: props.fontStyle || null
+          fontStyle: props.fontStyle || null,
+          margin: props.margin || null
         }}>
       {props.children}
     </p>

@@ -1,3 +1,19 @@
 .paragraph {
   line-height: 1.5em;
+
+  /* Information styleType */
+
+  &__information {
+    font-size: 15px;
+    margin: 10px auto;
+  }
+
+  /* Error styleType */
+
+  &__error {
+    border: 1px dashed black;
+    background-color: rgb(233, 233, 233);
+    margin: 10px auto;
+  }
 }
+

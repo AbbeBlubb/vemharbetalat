@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from "react-router-dom";
+import { withRouter } from 'react-router-dom';
 import { Button } from '../Button';
 import { Paragraph } from '../Paragraph';
 
@@ -8,6 +8,7 @@ class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state={
+      username: '',
       email: '',
       password: '',
       token: null,
@@ -19,34 +20,71 @@ class SignupForm extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  handleSignup = event => {
+  displayErrorMessage = errorMessage => {
+    let errorMessageToDisplay = '';
+
+    switch (errorMessage) {
+      case 'The given username is in use':
+        errorMessageToDisplay = 'Användarnamnet finns redan. Välj ett nytt!';
+        break;
+      default:
+        errorMessageToDisplay = errorMessage;
+    }
+
+    return (
+      <Paragraph
+        styleType='error'
+        textAlign='center'
+      >
+      {errorMessageToDisplay}
+      </Paragraph>
+    );
+  }
+
+  handleChangeAfterError = () => {
+    console.log('test')
+  }
+
+  handleSignup = (event, username, password) => {
 
     event.preventDefault();
 
-    // Use flags in state or use Redux flags to inform the user about the fetching
+    // TO DO: Use flags in state or use Redux flags to inform the user about the fetching
     fetch('https://cyberwall.herokuapp.com/signup', {
       method: 'POST',
       // Uploading JSON data, can be string or obj (the api expects an object)
-      body: JSON.stringify({ email: this.state.email, password: this.state.password }),
+      body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' }
     })
 
     .then(response => {
-      // MAKE THE ERROR HANDLING BETTER
       if (!response.ok) {
-        const body = response.json();
-        console.log('Response not ok: ', body) // This fires before the json() promise is ready
-        const errorMessage = Object.keys(body)[0]; // Undefined, probably because of this must be in a promise
-        this.setState({ errorMessage });
-        throw Error(response.statusText);
+
+        return new Promise((resolve, reject) => {
+          const data = response.json();
+          resolve(data);
+        })
+
+        .then(data => {
+          this.setState({
+            errorMessage: data.error
+          });
+        });
+
       } else {
-        return response.json();
+
+        return new Promise((resolve, reject) => {
+          const data = response.json();
+          resolve(data);
+        });
       }
     })
 
     .then(data => {
       return new Promise((resolve, reject) => {
-        this.setState({ token: data.token || false });
+        this.setState({
+          token: data.token || false
+        });
         resolve(data.token);
       });
     })
@@ -72,16 +110,16 @@ class SignupForm extends React.Component {
       <>
         <form
           className={'signup-form'}
-          onSubmit={event => this.handleSignup(event)}>
+          onSubmit={event => this.handleSignup(event, this.state.username, this.state.password)}>
 
-          <label htmlFor='email'>Användarnamn 1-20 tecken</label>
+          <label htmlFor='username'>Användarnamn 1-20 tecken</label>
           <input
             className={'signup-form__input'}
             type='text'
             required
-            name='email'
+            name='username'
             placeholder='Användarnamn'
-            value={this.state.email}
+            value={this.state.username}
             onChange={this.handleChange}
           />
 
@@ -96,12 +134,15 @@ class SignupForm extends React.Component {
             onChange={this.handleChange}
           />
 
+          <div className='align-center'>
           {/* Eventuellt felmeddelande */}
-          {this.state.errorMessage && (
-              <Paragraph textAlign={'center'}>
-                {this.state.errorMessage}
-              </Paragraph>
-          )}
+          {this.state.errorMessage && this.displayErrorMessage(this.state.errorMessage)}
+          </div>
+
+          <Paragraph styleType='information'>
+            Användarnamnet syns för alla i den inloggade sidan och ska därför varken innehålla namn eller e-post.
+            Lösenordet krypteras och kan inte återställas.
+          </Paragraph>
 
           <div className={'signup-form__submit-button-wrapper'}>
             <Button

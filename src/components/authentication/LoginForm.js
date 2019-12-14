@@ -8,12 +8,11 @@ export class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
+      username: '',
+      email: '', // Not in use
       password: '',
       errorMessage: ''
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleLoginError = this.handleLoginError.bind(this);
   }
 
   handleChange(e) {
@@ -55,26 +54,24 @@ export class LoginForm extends React.Component {
       <form>
 
         <div>
-          <label form='input-email'></label>
+          <label htmlFor='input-username'></label>
           <input
               value={this.state.email}
               onChange={this.handleChange}
-              type='email'
-              name='email'
+              type='text'
+              name='username'
               className='form-control'
-              id='input-email'
               placeholder='Användarnamn' />
         </div>
 
         <div>
-          <label form='input-password'></label>
+          <label htmlFor='input-password'></label>
           <input
               value={this.state.password}
               onChange={this.handleChange}
               type='password'
               name='password'
               className='form-control'
-              id='input-password'
               placeholder='Lösenord' />
         </div>
 

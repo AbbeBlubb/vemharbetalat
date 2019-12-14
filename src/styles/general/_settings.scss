@@ -5,10 +5,10 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; // Controls whether the user can select text
+  //-webkit-user-select: none;
+  //-moz-user-select: none;
+  //-ms-user-select: none;
+  //user-select: none; // Controls whether the user can select text
   -webkit-tap-highlight-color: transparent; // Sets the color of the highlight that appears over a link while it's being tapped. Transparent if to remove the highlight
 }
 
