@@ -7,7 +7,8 @@ export function Paragraph(props) {
         style={{
           textAlign: props.textAlign || null,
           fontStyle: props.fontStyle || null,
-          margin: props.margin || null
+          margin: props.margin || null,
+          textDecoration: props.textDecoration || null
         }}>
       {props.children}
     </p>

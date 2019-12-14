@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header } from '../Header';
-import { LoginForm } from '../authentication/LoginForm';
+import LoginForm from '../authentication/LoginForm';
 
 
 export class LoginContentForModal extends React.Component {

@@ -1,9 +1,10 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { Button } from '../Button';
-import { Paragraph } from '../Paragraph';
+import { DisplayErrorMessage } from './displayErrorMessage';
 
 
-export class LoginForm extends React.Component {
+class LoginForm extends React.Component {
 
   constructor(props) {
     super(props);
@@ -11,87 +12,121 @@ export class LoginForm extends React.Component {
       username: '',
       email: '', // Not in use
       password: '',
-      errorMessage: ''
+      errorMessage: null
     };
   }
 
-  handleChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
   }
 
-  handleLoginError(errorCode) {
-    switch (errorCode) {
-
-      case 'auth/invalid-email':
-        this.setState({
-          email: '',
-          password: '',
-          errorMessage: 'Ange din e-postadress'
-        });
-        break;
-
-      case 'auth/user-not-found':
-        this.setState({
-          password: '',
-          errorMessage: 'Användarnamnet matchar inte'
-        });
-        break;
-
-      case 'auth/wrong-password':
-        /* Om lösenordet är felaktigt, eller om lösenord ej anges men något angetts i 'användarnamn' */
-        this.setState({
-          password: '',
-          errorMessage: 'Lösenordet matchar inte'
-        });
-        break;
-
-      default: break;
-    }
+  handleChangeAfterError = () => {
+    // TO DO
   }
+
+  handleSignin = (event, username, password) => {
+
+    // Prevent reload on form submit
+    event.preventDefault();
+
+    // Restore the errorMessage to null to clean the <DisplayErrorMessage />
+    this.setState({ errorMessage: null });
+
+    // TO DO: Use flags in state or use Redux flags to inform the user about the fetching
+    fetch('https://cyberwall.herokuapp.com/signin', {
+      method: 'POST',
+      // Uploading JSON data, can be string or obj (the api expects an object)
+      body: JSON.stringify({ username, password }),
+      headers: { 'Content-Type': 'application/json' }
+    })
+
+    .then(response => {
+      if (!response.ok) {
+
+        return new Promise((resolve, reject) => {
+          // For login response Unauthorized
+          if(response.status === 401) {
+            resolve({ error: response.status });
+          } else {
+          // For signup errors
+            const data = response.json();
+            resolve(data);
+          }
+        })
+
+        .then(data => {
+          this.setState({
+            errorMessage: data.error
+          });
+        });
+
+      } else {
+
+        return new Promise((resolve, reject) => {
+          const data = response.json();
+          resolve(data);
+        });
+      }
+    })
+
+    .then(data => {
+      return new Promise((resolve, reject) => {
+        // Set persistent state in local storage, to be read by requireAuthenticationHOC
+        localStorage.setItem('token', data.token);
+        resolve('/watch');
+      });
+    })
+
+    .then(redirectURL => {
+      this.props.history.push(redirectURL);
+    })
+
+    // If the promise is rejected by network or by the throw Error
+    .catch(error => console.log('Error from catch: ', error));
+  };
 
   render() {
     return (
-      <form>
+      <form
+        className={'login-form'}
+        onSubmit={event => this.handleSignin(event, this.state.username, this.state.password)}
+      >
 
-        <div>
-          <label htmlFor='input-username'></label>
-          <input
-              value={this.state.email}
-              onChange={this.handleChange}
-              type='text'
-              name='username'
-              className='form-control'
-              placeholder='Användarnamn' />
-        </div>
+        <input
+        className='form-control'
+          type='text'
+          required
+          name='username'
+          placeholder='Användarnamn'
+          value={this.state.username}
+          onChange={this.handleChange}
+          aria-label={'Skriv in ditt användarnamn'}
+        />
 
-        <div>
-          <label htmlFor='input-password'></label>
-          <input
-              value={this.state.password}
-              onChange={this.handleChange}
-              type='password'
-              name='password'
-              className='form-control'
-              placeholder='Lösenord' />
-        </div>
+        <input
+          type='password'
+          required
+          name='password'
+          placeholder='Lösenord'
+          value={this.state.password}
+          onChange={this.handleChange}
+          aria-label={'Skriv in ditt lösenord'}
+        />
 
         {/* Eventuellt felmeddelande */}
-        {this.state.errorMessage && (
-            <Paragraph textAlign={'center'}>
-              {this.state.errorMessage}
-            </Paragraph>
-        )}
+        <DisplayErrorMessage errorMessage={this.state.errorMessage} />
 
-        {/* Knapp för att logga in */}
-        <div className='login__button align-center'>
+        <div className={'align-center'}>
           <Button
               styleType={'retro'}
               rippleEffect={false}
-              onClick={e => this.login(e)}>
-            Logga in
+          >
+            Loga in
           </Button>
         </div>
       </form>
     );
   }
 }
+
+export default withRouter(LoginForm);
