@@ -97,7 +97,7 @@ class SignupForm extends React.Component {
           type='text'
           required
           name='username'
-          placeholder='Användarnamn'
+          placeholder='Välj användarnamn'
           value={this.state.username}
           onChange={this.handleChange}
         />

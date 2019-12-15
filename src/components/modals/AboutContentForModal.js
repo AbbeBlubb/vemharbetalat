@@ -11,8 +11,12 @@ export function AboutContentForModal() {
 
       <Paragraph textAlign={'left'}>
         Nyfiken?
-        Inne i inloggat läge kan du se hur många som har betalat för att se vilka som har betalat, och läsa allas avtryck.
-        Hur många är de? Vad har de skrivit? Ta reda på det nu!
+        Inne i inloggat läge kan du se vilka som har betalat och hur många de är.
+        Hur många är de egentligen?
+        Vad har de valt för användarnamn?
+        Kommer antalet öka med tiden?
+        Nu har du chansen.
+        Ta reda på allt nu!!
       </Paragraph>
 
       <Paragraph textAlign={'left'}>

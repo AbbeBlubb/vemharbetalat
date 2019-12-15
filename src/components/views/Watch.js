@@ -6,7 +6,7 @@ class Watch extends React.Component {
   constructor(props) {
     super(props);
     this.state={
-      keyOne: null
+      userNames: []
     };
   }
 

@@ -25,11 +25,14 @@
 
   &__middle-first-layer {
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 80%;
+
+    @media(min-height: 580px) {
+      margin-top: 15vh; // If %, it will take the % of the width, because of the flex-direction: column
+    }
   }
 
   &__middle {

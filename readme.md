@@ -1,2 +1,2 @@
 ## Contract
-New user uses { token: xxx }
+See the backend readme
