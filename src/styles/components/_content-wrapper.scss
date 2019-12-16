@@ -1,12 +1,12 @@
 .content-wrapper {
 
-  /* Column styleType*/
+  /* Column-fixed styleType */
 
-  &__column-first-layer {
+  &__column-fixed-first-layer {
     //None
   }
 
-  &__column {
+  &__column-fixed {
     min-height: calc(100vh - 100px);
     display: flex;
     flex-direction: column;
@@ -16,10 +16,27 @@
     @media(min-height: 900px) {
       margin-top: calc((100vh - 100px - 800px) * 0.3); // If VH 901, then margin-top = 1px * 0.3
       min-height: auto;
-      height: 800px;
+      height: 800px; // NOTE - FIXED HEIGHT
       // Smooth responsivity on height because of the &__column min-height: calc(100vh - 100px) of the parent, whereas here on child, height 900 and height 800
     }
   }
+
+  /* Column-flow styleType */
+
+  &__column-flow-first-layer {
+    // None
+  }
+
+  &__column-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media(min-height: 900px) {
+      // None
+    }
+  }
+
 
   /* Middle styleType */
 

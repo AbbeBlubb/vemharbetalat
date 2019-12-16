@@ -3,6 +3,7 @@
   height: 100%; /* To avoid the 'scrolling' because of the browser's URL bar */
   padding: 0 20px;
   position: relative;
+  overflow: scroll;
 
   @media (min-height: 650px) {
     padding: 20px;

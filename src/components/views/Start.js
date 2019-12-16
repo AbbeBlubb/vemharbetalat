@@ -27,7 +27,7 @@ export function Start(props) {
         </Modal>
       </Navigation>
 
-      <ContentWrapper styleType={'column'}>
+      <ContentWrapper styleType={'column-fixed'}>
         <Header level={'h1'} textAlign={'center'}>
           Vem har betalat för att se vem som har betalat?
         </Header>

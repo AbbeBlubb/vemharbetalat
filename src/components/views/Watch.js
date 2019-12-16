@@ -40,7 +40,7 @@ class Watch extends React.Component {
           </div>
         </Navigation>
 
-        <ContentWrapper styleType={'column'}>
+        <ContentWrapper styleType={'column-flow'}>
           <Paragraph>
             <Counter numberOfUsers={this.state.numberOfUsers}/>
           </Paragraph>
