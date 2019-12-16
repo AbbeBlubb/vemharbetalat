@@ -3,16 +3,32 @@
   position: sticky;
   top: 0;
 
-  /* Stpace-between styleType */
+  /* Space-between styleType, for smaller screens */
+
+  // On small screens, the links/buttons are spread
   &__space-between {
     display: flex;
     justify-content: space-between;
   }
 
+  /* Right styleType, for smaller screens*/
+  &__right {
+    display: block;
+    text-align: right;
+  }
+
+  &__second {
+    top: 60px;
+  }
+
+
+
   /* @media must be last, to override the positions/styleTypes*/
+  
+  // On bigger screens, the links/buttons are aligned to right
   @media (min-width: 420px) {
     display: block;
-    text-align: right; // On small screens, the links/buttons are spread
+    text-align: right;
   }
 
 }

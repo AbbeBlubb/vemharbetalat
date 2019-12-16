@@ -13,7 +13,7 @@ import { ContentWrapper } from '../contentWrapper';
 export function Start(props) {
   return (
     <>
-      <Navigation>
+      <Navigation styleType={'space-between'}>
         <Modal renderContent={() => <AboutContentForModal />} useCloseButton={true}>
           <Button styleType={'transparent'} rippleEffect={false}>
             Om VHB

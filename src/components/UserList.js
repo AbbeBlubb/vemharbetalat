@@ -11,9 +11,55 @@ class UserList extends React.Component {
         'Snorkfröken',
         'kudden',
         'pepparkakan',
-        'Cybertruck'
+        'Cybertruck',
+        'Chefen',
+        'Snorkfröken',
+        'kudden',
+        'pepparkakan',
+        'Cybertruck',
+        'Chefen',
+        'Snorkfröken',
+        'kudden',
+        'pepparkakan',
+        'Cybertruck',
+        'Chefen',
+        'Snorkfröken',
+        'kudden',
+        'pepparkakan',
+        'Cybertruck',
+        'Chefen',
+        'Snorkfröken',
+        'kudden',
+        'pepparkakan',
+        'Cybertruck',
+        'Chefen',
+        'Snorkfröken',
+        'kudden',
+        'pepparkakan',
+        'Cybertruck',
+        'Chefen',
+        'Snorkfröken',
+        'kudden',
+        'pepparkakan',
+        'Cybertruck',
+        'Chefen',
+        'Snorkfröken',
+        'kudden',
+        'pepparkakan',
+        'Cybertruck',
+        'hej'
       ]
     };
+  }
+
+  componentDidMount() {
+    this.props.numberOfUsersToState(this.state.userNames.length);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state !== prevState) {
+      this.props.numberOfUsersToState(this.state.userNames.length);
+    }
   }
 
   render() {
@@ -21,7 +67,6 @@ class UserList extends React.Component {
       <ul className={'user-list'}>
         {this.state.userNames.map((user, index) => (
           <li
-            className={'user-list__item'}
             key={index}
           >
             {user}

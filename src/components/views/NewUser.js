@@ -12,7 +12,7 @@ export class NewUser extends React.Component {
   render() {
     return (
       <>
-        <Navigation>
+        <Navigation styleType={'right'}>
           <Button styleType={'transparent'} rippleEffect={false} onClick={() => this.props.history.push('/')}>
             &#60;&#60; Tillbaka
           </Button>
