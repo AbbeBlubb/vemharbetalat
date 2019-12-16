@@ -72,7 +72,7 @@ class SignupForm extends React.Component {
     .then(data => {
       return new Promise((resolve, reject) => {
         // Set persistent state in local storage, to be read by requireAuthenticationHOC
-        localStorage.setItem('token', data.token);
+        sessionStorage.setItem('token', data.token);
         resolve('/watch');
       });
     })

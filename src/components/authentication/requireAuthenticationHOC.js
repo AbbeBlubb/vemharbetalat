@@ -13,7 +13,7 @@ export const requireAuthenticationHOC = ChildComponent => {
     }
 
     shouldNavigateToStart() {
-      if (!localStorage.getItem('token') ) {
+      if (!sessionStorage.getItem('token') ) {
         this.props.history.push('/');
       }
     }

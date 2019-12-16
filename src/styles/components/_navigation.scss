@@ -1,12 +1,18 @@
 .navigation {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
   position: sticky;
   top: 0;
 
+  /* Stpace-between styleType */
+  &__space-between {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* @media must be last, to override the positions/styleTypes*/
   @media (min-width: 420px) {
     display: block;
-    text-align: right;
+    text-align: right; // On small screens, the links/buttons are spread
   }
+
 }
