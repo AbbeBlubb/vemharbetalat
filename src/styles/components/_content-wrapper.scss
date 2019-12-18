@@ -48,7 +48,7 @@
     width: 100%;
 
     @media(min-height: 580px) {
-      margin-top: 15vh; // If %, it will take the % of the width, because of the flex-direction: column
+      margin-top: 15vh; // Must be vh, as % specifies a top margin in percent of the width of the containing element
     }
   }
 
