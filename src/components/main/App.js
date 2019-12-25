@@ -7,6 +7,7 @@ import Watch from '../views/Watch';
 import { NoMatch } from '../views/NoMatch';
 import { OutlineHandler } from './OutlineHandler';
 import '../../libraries/waves';
+import { pingServer } from './pingServer';
 
 
 // Handle outlines when tabbing and clicking
@@ -14,6 +15,13 @@ const outlineHandlerSingleton = new OutlineHandler();
 
 
 export default class App extends React.Component {
+
+  componentDidMount() {
+    pingServer(
+      fetch,
+      'https://cyberwall.herokuapp.com/ping'
+    );
+  }
 
   render() {
     return (
