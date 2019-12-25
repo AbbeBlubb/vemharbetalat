@@ -119,9 +119,9 @@ class LoginForm extends React.Component {
         <div className={'align-center'}>
           <Button
               styleType={'retro'}
-              rippleEffect={false}
+              rippleEff ect={false}
           >
-            Loga in
+            Logga in
           </Button>
         </div>
       </form>

@@ -47,7 +47,11 @@
     justify-content: center;
     width: 100%;
 
-    @media(min-height: 580px) {
+    @media(min-height: 650px) {
+      margin-top: 5vh; // Must be vh, as % specifies a top margin in percent of the width of the containing element
+    }
+
+    @media(min-height: 800px) {
       margin-top: 15vh; // Must be vh, as % specifies a top margin in percent of the width of the containing element
     }
   }

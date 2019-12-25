@@ -18,10 +18,6 @@ export function AboutContentForModal() {
         Nu har du chansen.
         Ta reda på allt nu!!
       </Paragraph>
-
-      <Paragraph textAlign={'left'}>
-        VemHarBetalat utvecklas på min fritid. Det är en rolig grej.
-      </Paragraph>
     </section>
   );
 }

@@ -12,7 +12,7 @@ import { ContentWrapper } from '../contentWrapper';
 
 export function Start(props) {
   return (
-    <>
+    <div className='frame'>
       <Navigation styleType={'space-between'}>
         <Modal renderContent={() => <AboutContentForModal />} useCloseButton={true}>
           <Button styleType={'transparent'} rippleEffect={false}>
@@ -42,6 +42,6 @@ export function Start(props) {
 
         <Instructions />
       </ContentWrapper>
-    </>
+    </div>
   );
 }

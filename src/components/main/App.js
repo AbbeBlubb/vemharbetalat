@@ -1,7 +1,6 @@
 import React from 'react';
-// Import the BrowserRotuer or HashRouter as Router to aviod to change the component name in the JSX
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { MainFrame } from './MainFrame';
+// Import the BrowserRotuer or HashRouter as Router, to aviod to change the component name in the JSX
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { Start } from '../views/Start';
 import { NewUser } from '../views/NewUser';
 import Watch from '../views/Watch';
@@ -18,17 +17,15 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <MainFrame>
-        <Router>
-          {/* Switch renders only the first match, thus the possibility for the NoMatch component */}
-          <Switch>
-            <Route exact path='/' component={Start} />
-            <Route path='/new' component={NewUser} />
-            <Route path='/watch' component={Watch} />
-            <Route component={NoMatch} />
-          </Switch>
-        </Router>
-      </MainFrame>
+      <Router>
+        {/* Switch renders only the first match, thus the possibility for the NoMatch component */}
+        <Switch>
+          <Route exact path='/' component={Start} />
+          <Route path='/new' component={NewUser} />
+          <Route path='/watch' component={Watch} />
+          <Route component={NoMatch} />
+        </Switch>
+      </Router>
     );
   }
 }

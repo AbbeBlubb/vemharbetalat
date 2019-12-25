@@ -27,7 +27,7 @@ class Watch extends React.Component {
 
   render() {
     return (
-      <>
+      <div className='frame'>
         <Navigation styleType={'right'}>
           <div className={'padding-top-15'}>
             <Button
@@ -47,7 +47,7 @@ class Watch extends React.Component {
 
           <UserList numberOfUsersToState={this.numberOfUsersToState} />
         </ContentWrapper>
-      </>
+      </div>
     );
   }
 }

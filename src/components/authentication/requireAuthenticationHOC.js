@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from "react-router";
 
 export const requireAuthenticationHOC = ChildComponent => {
 
@@ -25,5 +26,6 @@ export const requireAuthenticationHOC = ChildComponent => {
     }
   }
 
-  return ComposedComponent;
+  // withRouter is needed because the ChildComponent is not always rendered by the Route, thus not having props.history
+  return withRouter(ComposedComponent);
 };
