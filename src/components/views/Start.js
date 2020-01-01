@@ -37,7 +37,7 @@ export function Start(props) {
           Ta reda på det nu!
         </Paragraph>
 
-        <Labeler styleType={'button-now'}>
+        <Labeler styleType={'buy-button-now'}>
           <Button styleType={'buy'} rippleEffect={true} onClick={() => props.history.push('/new')}>
             Betala 10 kr
           </Button>

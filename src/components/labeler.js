@@ -5,7 +5,7 @@ export const Labeler = props => {
 
   const getLabelType = styleType => {
     switch (styleType) {
-      case 'button-now':
+      case 'buy-button-now':
         return (
           <div className={`labeler__${styleType}`}>
             <div className='labeler__wrapper-for-second-transform'>
