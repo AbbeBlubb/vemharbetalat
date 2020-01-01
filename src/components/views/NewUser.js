@@ -23,13 +23,6 @@ export class NewUser extends React.Component {
             Skapa inloggning
           </Header>
 
-          <Paragraph
-            margin={'24px auto'}
-            textDecoration={'underline'}
-          >
-            Kampanj - just nu gratis!
-          </Paragraph>
-
           <SignupForm />
 
         </ContentWrapper>

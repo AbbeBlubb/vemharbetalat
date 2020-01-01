@@ -1,0 +1,23 @@
+.labeler {
+  position: relative;
+  
+  &__button-now {
+    display: inline;
+    position: absolute;
+    width: 100px;
+    transform: translate(-50%, -50%) rotate(32deg);
+    z-index: 1;
+    pointer-events: none;
+    top: 7px;
+    right: -92px;
+    line-height: 0.8;
+    text-align: center;
+    color: black;
+
+    @media(min-width: 900px){
+      //width: auto;
+      top: -5px;
+      right: -105px;
+    }
+  }
+}

@@ -91,24 +91,32 @@ class SignupForm extends React.Component {
         className={'signup-form'}
         onSubmit={event => this.handleSignup(event, this.state.username, this.state.password)}>
 
-        <label htmlFor='username'>Synligt användarnamn 1-20 tecken</label>
+        <label
+          className={'signup-form__label'}
+          htmlFor='username'>
+            Synligt användarnamn
+        </label>
         <input
           className={'signup-form__input'}
           type='text'
           required
           name='username'
-          placeholder='Välj användarnamn'
+          placeholder='Synligt användarnamn'
           value={this.state.username}
           onChange={this.handleChange}
         />
 
-        <label htmlFor='password'>Lösenord 1-20 tecken</label>
+        <label
+          className={'signup-form__label'}
+          htmlFor='password'>
+            Lösenord
+        </label>
         <input
           className={'signup-form__input'}
           type='password'
           required
           name='password'
-          placeholder='Välj lösenord'
+          placeholder='Lösenord'
           value={this.state.password}
           onChange={this.handleChange}
         />

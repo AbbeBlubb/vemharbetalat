@@ -2,6 +2,7 @@ import React from 'react';
 import { Header } from '../Header';
 import { Instructions } from '../Instructions';
 import { Button } from '../Button';
+import { Labeler } from '../labeler';
 import { Paragraph } from '../Paragraph';
 import { Navigation } from '../Navigation';
 import { Modal } from '../modals/Modal';
@@ -36,9 +37,11 @@ export function Start(props) {
           Ta reda på det nu!
         </Paragraph>
 
-        <Button styleType={'buy'} rippleEffect={true} onClick={() => props.history.push('/new')}>
-          Betala 10 kr
-        </Button>
+        <Labeler styleType={'button-now'}>
+          <Button styleType={'buy'} rippleEffect={true} onClick={() => props.history.push('/new')}>
+            Betala 10 kr
+          </Button>
+        </Labeler>
 
         <Instructions />
       </ContentWrapper>
