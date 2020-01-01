@@ -9,7 +9,7 @@ export const Labeler = props => {
         return (
           <div className={`labeler__${styleType}`}>
             <div className='labeler__wrapper-for-second-transform'>
-              Just nu gratis!
+              Just nu gratis!!
             </div>
           </div>
         );

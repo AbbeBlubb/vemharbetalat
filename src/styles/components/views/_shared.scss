@@ -1,0 +1,11 @@
+.frame {
+  width: 100vw;
+  // Padding only on sides
+  padding: 0 20px;
+  position: relative;
+
+  @media (min-height: 650px) {
+    // Padding added to top, no padding at bottom
+    padding: 20px 20px 0 20px;
+  }
+}
