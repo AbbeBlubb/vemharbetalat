@@ -6,7 +6,13 @@ export const Labeler = props => {
   const getLabelType = styleType => {
     switch (styleType) {
       case 'button-now':
-        return <div className={`labeler__${styleType}`}>Just nu gratis!</div>;
+        return (
+          <div className={`labeler__${styleType}`}>
+            <div className='labeler__wrapper-for-second-transform'>
+              Just nu gratis!
+            </div>
+          </div>
+        );
       default:
         break;
     }

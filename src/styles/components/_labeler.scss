@@ -20,4 +20,18 @@
       right: -105px;
     }
   }
+
+  &__wrapper-for-second-transform {
+    animation: wiggle 4s infinite;
+  }
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg);}
+  50% { transform: rotate(0deg);}
+  60% { transform: rotate(-5deg);}
+  70% { transform: rotate(5deg);}
+  80% { transform: rotate(-5deg);}
+  90% { transform: rotate(5deg);}
+  100% { transform: rotate(0deg);;}
 }
