@@ -1,5 +1,6 @@
 html {
-  //height: 100%;
+  // Height 100% is used by the view NoMatch and this hight is therefore needed in the tree: html, body & #root
+  height: 100%;
   box-sizing: border-box;
 }
 
@@ -16,8 +17,7 @@ body {
   font-family: Consolas, monospace;
   font-size: 18px;
   color: red;
-
-  //height: 100%;
+  height: 100%;
   margin: 0;
 
   @media (min-width: 900px) {
@@ -26,7 +26,7 @@ body {
 }
 
 #root {
-  //height: 100%;
+  height: 100%;
 }
 
 /* Width for repeated text-boxes */
