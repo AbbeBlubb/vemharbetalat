@@ -17,12 +17,15 @@ class Watch extends React.Component {
   }
 
   numberOfUsersToState = numberOfUsers => {
-    this.setState({ numberOfUsers })
+    this.setState({ numberOfUsers });
   }
 
   signOut = () => {
-    sessionStorage.removeItem('token');
-    this.props.history.push('/');
+    setTimeout(() => {
+      sessionStorage.removeItem('token');
+      this.props.history.push('/');
+      console.log(100)
+    }, 100);
   }
 
   render() {

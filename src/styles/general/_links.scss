@@ -1,0 +1,25 @@
+a:link,
+a:visited {
+  color:black;
+}
+
+a:hover,
+a:focus {
+  color: gray;
+}
+
+a:active {
+  color: red;
+}
+
+.menu-link {
+  // Inline-block to aviod collapsing of margin/padding on top
+  display: inline-block;
+  // The following margins and paddings imitate the <Button styleType='transparent'>
+  margin: 2px 2px;
+  padding: 9px 10px;
+
+  @media (min-width: 900px) {
+    margin: 5px 10px;
+  }
+}

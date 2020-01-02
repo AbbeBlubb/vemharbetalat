@@ -13,6 +13,11 @@
   background-size: 200% 200%;
   animation: barberpole 40s linear infinite;
 
+  &__box {
+    // The box needs a widh to be consistent amongst screen widths. Counting the margins of the button, it's 284px.
+    width: 284px;
+  }
+
   &__message {
     font-size: 160px;
     text-shadow: 3px 3px #000;

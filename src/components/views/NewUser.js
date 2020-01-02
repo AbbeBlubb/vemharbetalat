@@ -1,10 +1,9 @@
 import React from 'react';
 import { Header } from '../Header';
-import { Button } from '../Button';
-import { Paragraph } from '../Paragraph';
 import { Navigation } from '../Navigation';
-import SignupForm from '../authentication/SignupForm';
+import { Link } from 'react-router-dom';
 import { ContentWrapper } from '../contentWrapper';
+import SignupForm from '../authentication/SignupForm';
 
 
 export class NewUser extends React.Component {
@@ -13,9 +12,11 @@ export class NewUser extends React.Component {
     return (
       <div className='frame'>
         <Navigation styleType={'right'}>
-          <Button styleType={'transparent'} rippleEffect={false} onClick={() => this.props.history.push('/')}>
+          <Link
+            to='/'
+            className='menu-link'>
             &#60;&#60; Tillbaka
-          </Button>
+          </Link>
         </Navigation>
 
         <ContentWrapper styleType={'middle'}>
