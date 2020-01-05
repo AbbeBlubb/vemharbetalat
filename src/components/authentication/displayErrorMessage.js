@@ -12,6 +12,12 @@ export function DisplayErrorMessage(props) {
     case 401:
       errorMessageToDisplay = 'Användarnamn och/eller lösenord är felaktigt';
       break;
+    case 'The username should not exceed 20 characters':
+      errorMessageToDisplay = 'Användarnamnet får ha högst 20 tecken';
+      break;
+    case 'The password should not exceed 20 characters':
+      errorMessageToDisplay = 'Lösenordet får ha högst 20 tecken';
+      break;
     default:
       errorMessageToDisplay = props.errorMessage;
   }

@@ -17,20 +17,31 @@ class SignupForm extends React.Component {
   }
 
   handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+    if (event.target.value.length < 21) {
+      this.setState({
+        [event.target.name]: event.target.value,
+        errorMessage: null
+      });
+    } else {
+      this.setState({ errorMessage: `The ${event.target.name} should not exceed 20 characters`});
+    }
   }
 
   handleChangeAfterError = () => {
     // TO DO
   }
 
-  handleSignup = (event, username, password) => {
+  handleSignup = (event, usernameToPrepare, passwordToPrepare) => {
 
     // Prevent reload on form submit
     event.preventDefault();
 
     // Restore the errorMessage to null to clean the <DisplayErrorMessage />
     this.setState({ errorMessage: null });
+
+    // Data massage. NOTE: the API requires the sent var names to be 'username' and 'password'
+    const username = usernameToPrepare.trim();
+    const password = passwordToPrepare.trim();
 
     // TO DO: Use flags in state or use Redux flags to inform the user about the fetching
     fetch('https://cyberwall.herokuapp.com/signup', {
