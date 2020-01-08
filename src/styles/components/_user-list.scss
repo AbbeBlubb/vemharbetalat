@@ -5,6 +5,10 @@
   min-width: 280px;
   max-width: 350px;
 
+  @media(min-width: 900px) {
+    max-width: 400px;
+  }
+
   &__item {
     display: flex;
     justify-content: space-between;
