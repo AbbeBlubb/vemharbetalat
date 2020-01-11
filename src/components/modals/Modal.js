@@ -51,11 +51,13 @@ export class Modal extends React.Component {
         >
 
           {/* Close icon. Click events bubbles to parent where it's catched */}
-          <img
-            className='modal__close-icon'
-            src={closeIcon}
-            alt='Close icon'
-          />
+          <button className='modal__close-button'>
+            <img
+              className='modal__close-icon'
+              src={closeIcon}
+              alt='Close icon'
+            />
+          </button>
 
           {/* Modal card-tile. Click events are stopped from bubbeling */}
           <div className='modal__card' onClick={event => event.stopPropagation()}>
