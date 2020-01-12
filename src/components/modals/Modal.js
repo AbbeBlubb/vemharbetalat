@@ -68,6 +68,26 @@ export class Modal extends React.Component {
     window.addEventListener('keydown', this.handleKeyDown, false);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    /** # Auto focus #
+      - Following outline is shown due to the CSS and OtilineHandler.js:
+        - 1. When user is clicking ->
+          - button shows no outline (but fucus makes it possible to press enter on the focused button)
+          - input shows outline
+        - 2. When user is tabbing ->
+          - button outline is shown
+          - input shows outline
+    */
+
+    // The conditon works fine with only this.state.show === true, but comparision to prevState.show is done in case the state is expanded in the future
+    if (this.state.show === true && prevState.show === false) {
+      this.modalNodeRef.current
+        .querySelector('.modal--display-block')
+        .querySelectorAll('button, input')[1]
+        .focus();
+    }
+  }
+
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handleKeyDown, false);
   }
@@ -75,6 +95,7 @@ export class Modal extends React.Component {
   render() {
 
     const varWithClasses = this.state.show ? 'modal__background modal--display-block' : 'modal__background modal--display-none';
+    const varWithAriaHidden = this.state.show ? 'false' : 'true';
 
     return (
       <div
@@ -88,6 +109,7 @@ export class Modal extends React.Component {
 
         {/* The modal background */}
         <div
+          aria-hidden={varWithAriaHidden}
           className={varWithClasses}
           onClick={() => this.hideModal()}
         >
