@@ -6,6 +6,7 @@ export class OutlineHandler {
       window.addEventListener('keydown', this.userIsTabbing.bind(this), false);
     }
     if ('onmousedown' in window) {
+      // onclick catches click + keys for MouseEvent (space + enter for eg button). mosedown catches mouse down only when the pointer is inside an element
       window.addEventListener('mousedown', this.userIsClicking.bind(this), false);
     }
 
