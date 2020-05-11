@@ -1,6 +1,6 @@
 import React from 'react';
 // Import the BrowserRotuer or HashRouter as Router, to aviod to change the component name in the JSX
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Start } from '../views/Start';
 import { NewUser } from '../views/NewUser';
 import Watch from '../views/Watch';
