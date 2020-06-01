@@ -1,6 +1,5 @@
-## Contract
-See the backend readme
+# Frontend for authentication
 
-## Z-index
-waves-effect has z-index 1
-<Labeler styleType={'button-now'}> has z-index 1
+Frontend that uses my authentication server (see repo auth-server).
+
+The frontend idea is to make an account in order to see all the user names in the database.
